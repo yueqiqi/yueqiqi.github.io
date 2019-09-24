@@ -1,0 +1,981 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon.jng?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon.jpg?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Hexo, NexT">
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051&amp;lt;view class=&amp;quot;weui-search-bar&amp;quot;&amp;gt;   &amp;lt;view class=&amp;quot;weui-search-bar__form&amp;quot;&amp;gt;    &amp;">
+<meta property="og:type" content="article">
+<meta property="og:title" content="微信小程序搜索功能">
+<meta property="og:url" content="http://yuqiqi.com/2019/09/25/微信小程序搜索功能/index.html">
+<meta property="og:site_name" content="七月先森的独立博客">
+<meta property="og:description" content="123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051&amp;lt;view class=&amp;quot;weui-search-bar&amp;quot;&amp;gt;   &amp;lt;view class=&amp;quot;weui-search-bar__form&amp;quot;&amp;gt;    &amp;">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="http://yuqiqi.com/images/search.png">
+<meta property="og:image" content="http://yuqiqi.com/images/s2.png">
+<meta property="og:updated_time" content="2019-09-24T16:06:27.991Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="微信小程序搜索功能">
+<meta name="twitter:description" content="123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051&amp;lt;view class=&amp;quot;weui-search-bar&amp;quot;&amp;gt;   &amp;lt;view class=&amp;quot;weui-search-bar__form&amp;quot;&amp;gt;    &amp;">
+<meta name="twitter:image" content="http://yuqiqi.com/images/search.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":true,"scrollpercent":true,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yuqiqi.com/2019/09/25/微信小程序搜索功能/">
+
+
+
+
+<script src="//cdn.bootcss.com/pace/1.0.2/pace.min.js"></script>
+<link href="//cdn.bootcss.com/pace/1.0.2/themes/pink/pace-theme-flash.css" rel="stylesheet">
+<style>
+    .pace .pace-progress {
+        background: #ff009e; /*进度条颜色*/
+        height: 3px;
+    }
+    .pace .pace-progress-inner {
+         box-shadow: 0 0 10px #ff009e, 0 0 5px #ff009e; /*阴影颜色*/
+    }
+    .pace .pace-activity {
+        border-top-color: #ff009e;    /*上边框颜色*/
+        border-left-color: #ff009e;    /*左边框颜色*/
+    }
+</style>
+
+  <title>微信小程序搜索功能 | 七月先森的独立博客</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband">
+      <a href="https://github.com/yueqiqi" class="github-corner" aria-label="View source on GitHub"><svg width="80" height="80" viewbox="0 0 250 250" style="fill:#151513; color:#fff; position: absolute; top: 0; border: 0; right: 0;" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"/><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"/><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"/></svg></a><style>.github-corner:hover .octo-arm{animation:octocat-wave 560ms ease-in-out}@keyframes octocat-wave{0%,100%{transform:rotate(0)}20%,60%{transform:rotate(-25deg)}40%,80%{transform:rotate(10deg)}}@media (max-width:500px){.github-corner:hover .octo-arm{animation:none}.github-corner .octo-arm{animation:octocat-wave 560ms ease-in-out}}</style>
+    </div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">七月先森的独立博客</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">爱生活 爱编程</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br>
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-schedule">
+          <a href="/schedule/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-calendar"></i> <br>
+            
+            日程表
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-sitemap">
+          <a href="/sitemap.xml" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-sitemap"></i> <br>
+            
+            站点地图
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-commonweal">
+          <a href="/404/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-heartbeat"></i> <br>
+            
+            公益404
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yuqiqi.com/2019/09/25/微信小程序搜索功能/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="七月">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/favicon.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="七月先森的独立博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">微信小程序搜索功能</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-09-25T00:06:13+08:00">
+                2019-09-25
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="page-pv">本文总阅读量
+            <span class="busuanzi-value" id="busuanzi_value_page_pv"></span>次
+            </span>
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p><img src="/images/search.png" alt><img src="/images/s2.png" alt></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br></pre></td><td class="code"><pre><span class="line">&lt;view class=&quot;weui-search-bar&quot;&gt;</span><br><span class="line">   &lt;view class=&quot;weui-search-bar__form&quot;&gt;</span><br><span class="line">    &lt;view class=&quot;weui-search-bar__box&quot;&gt;</span><br><span class="line">      &lt;icon class=&quot;weui-icon-search_in-box&quot; type=&quot;search&quot; size=&quot;14&quot;&gt;&lt;/icon&gt;</span><br><span class="line">      &lt;input type=&quot;text&quot; class=&quot;weui-search-bar__input&quot; placeholder=&quot;搜索...&quot; value=&quot;&#123;&#123;wxSearchData.value&#125;&#125;&quot; bindinput=&quot;wxSearchInput&quot; bindconfirm=&quot;wxSearchConfirm&quot; /&gt;</span><br><span class="line">      &lt;view class=&quot;weui-icon-clear&quot; wx:if=&quot;&#123;&#123;wxSearchData.value.length &gt; 0&#125;&#125;&quot; bindtap=&quot;wxSearchClear&quot;&gt;</span><br><span class="line">        &lt;icon type=&quot;clear&quot; size=&quot;14&quot;&gt;&lt;/icon&gt;</span><br><span class="line">      &lt;/view&gt;</span><br><span class="line">    &lt;/view&gt;</span><br><span class="line">  &lt;/view&gt;</span><br><span class="line">    &lt;view class=&quot;weui-search-bar__cancel-btn&quot; bindtap=&quot;wxSearchConfirm&quot;&gt;</span><br><span class="line">         &lt;text wx:if=&quot;&#123;&#123;wxSearchData.value.length&gt;0&#125;&#125;&quot; data-key=&apos;search&apos;&gt;搜索&lt;/text&gt;</span><br><span class="line">         &lt;text wx:else data-key=&apos;back&apos;&gt;取消&lt;/text&gt;</span><br><span class="line">     &lt;/view&gt;</span><br><span class="line">&lt;/view&gt;</span><br><span class="line"></span><br><span class="line">&lt;view class=&quot;wxSearch&quot; style=&quot;&apos;block&apos;;height:&#123;&#123;wxSearchData.view.seachHeight&#125;&#125;px;top:&#123;&#123;wxSearchData.view.barHeight&#125;&#125;px;&quot;&gt;</span><br><span class="line"></span><br><span class="line">  &lt;view class=&quot;wxSearchInner&quot;&gt;</span><br><span class="line">    &lt;!-- 搜索提示部分 --&gt;</span><br><span class="line">    &lt;view class=&quot;wxSearchMindKey&quot;&gt;</span><br><span class="line">      &lt;view class=&quot;wxSearchMindKeyList&quot;&gt;</span><br><span class="line">        &lt;block wx:for=&quot;&#123;&#123;wxSearchData.tipKeys&#125;&#125;&quot; wx:key=&quot;&#123;&#123;index&#125;&#125;&quot;&gt;  </span><br><span class="line">          &lt;view class=&quot;wxSearchMindKeyItem&quot; bindtap=&quot;wxSearchKeyTap&quot; data-key=&quot;&#123;&#123;item&#125;&#125;&quot;&gt;&#123;&#123;item&#125;&#125;&lt;/view&gt;</span><br><span class="line">        &lt;/block&gt;</span><br><span class="line">      &lt;/view&gt;</span><br><span class="line">    &lt;/view&gt;</span><br><span class="line"></span><br><span class="line">    &lt;view wx:if=&quot;&#123;&#123;wxSearchData.his[0]&#125;&#125;&quot; class=&quot;wxSearchHistory&quot; style=&quot;display:&#123;&#123;wxSearchData.value.length&gt;0 ? &apos;none&apos;:&apos;block&apos;&#125;&#125;&quot;&gt;</span><br><span class="line">      &lt;view class=&quot;wxSearchHistoryItem&quot;&gt;</span><br><span class="line">        &lt;text class=&quot;wxSearchHistoryItemTitle&quot;&gt;搜索记录&lt;/text&gt;</span><br><span class="line">        &lt;!--text class=&quot;wxSearchHistoryItemDel&quot; bindtap=&quot;wxSearchDeleteAll&quot;&gt;删除&lt;/text--&gt;</span><br><span class="line">        &lt;icon type=&quot;clear&quot; bindtap=&quot;wxSearchDeleteAll&quot; size=&quot;18&quot; /&gt;</span><br><span class="line">      &lt;/view&gt;</span><br><span class="line">      &lt;view class=&quot;wxSearchKeyList&quot;&gt;</span><br><span class="line">        &lt;block wx:for=&quot;&#123;&#123;wxSearchData.his&#125;&#125;&quot; wx:key=&quot;&#123;&#123;index&#125;&#125;&quot;&gt;</span><br><span class="line">          &lt;view class=&quot;wxSearchKeyItem&quot; bindtap=&quot;wxSearchKeyTap&quot; data-key=&quot;&#123;&#123;item&#125;&#125;&quot;&gt;&#123;&#123;item&#125;&#125;&lt;/view&gt;</span><br><span class="line">        &lt;/block&gt;</span><br><span class="line">      &lt;/view&gt;</span><br><span class="line">    &lt;/view&gt;</span><br><span class="line"></span><br><span class="line">    &lt;view class=&quot;wxSearchKey&quot; style=&quot;display:&#123;&#123;wxSearchData.value.length&gt;0 ? &apos;none&apos;:&apos;block&apos;&#125;&#125;&quot;&gt;</span><br><span class="line">      &lt;text wx:if=&quot;&#123;&#123;wxSearchData.hotKeys[0]&#125;&#125;&quot; class=&quot;wxSearchTitle&quot;&gt;搜索热点&lt;/text&gt;</span><br><span class="line">      &lt;view class=&quot;wxSearchKeyList&quot;&gt;</span><br><span class="line">        &lt;block wx:for=&quot;&#123;&#123;wxSearchData.hotKeys&#125;&#125;&quot; wx:key=&quot;&#123;&#123;index&#125;&#125;&quot;&gt;</span><br><span class="line">          &lt;view class=&quot;wxSearchKeyItem&quot; bindtap=&quot;wxSearchKeyTap&quot; data-key=&quot;&#123;&#123;item&#125;&#125;&quot;&gt;&#123;&#123;item&#125;&#125;&lt;/view&gt;</span><br><span class="line">        &lt;/block&gt;</span><br><span class="line">      &lt;/view&gt;</span><br><span class="line">    &lt;/view&gt;</span><br><span class="line">  &lt;/view&gt;</span><br><span class="line">&lt;/view&gt;</span><br></pre></td></tr></table></figure>
+
+<p>搜索提示部分如图二 相当于联想词</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br><span class="line">162</span><br><span class="line">163</span><br><span class="line">164</span><br><span class="line">165</span><br><span class="line">166</span><br><span class="line">167</span><br><span class="line">168</span><br><span class="line">169</span><br><span class="line">170</span><br></pre></td><td class="code"><pre><span class="line">/** 整个区域 */</span><br><span class="line">.wxSearch&#123;</span><br><span class="line">  position: absolute;</span><br><span class="line">  top: 86rpx;</span><br><span class="line">  left: 0;</span><br><span class="line">  width: 100%;</span><br><span class="line">  height: 100%;</span><br><span class="line">  border-top: 2rpx #eee solid;</span><br><span class="line">  background-color: rgba(200, 200, 200, 0.1);</span><br><span class="line">  z-index: 9999;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">/** 搜索框下面的提示区域 */</span><br><span class="line">.wxSearchInner&#123;</span><br><span class="line">  background-color: #fff;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">/** 搜索热点标题 */</span><br><span class="line">.wxSearchTitle&#123;</span><br><span class="line">  display: block;</span><br><span class="line">  padding: 20rpx 10rpx 10rpx 20rpx;</span><br><span class="line">  font-size: 26rpx;</span><br><span class="line">  text-align: left;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">/** 提示样式 */</span><br><span class="line">.wxSearchMindKeyItem&#123;</span><br><span class="line">  padding: 20rpx 10rpx 20rpx 30rpx;</span><br><span class="line">  margin-left: 20rpx;</span><br><span class="line">  border-bottom: 2rpx solid #eee;</span><br><span class="line">  display: flex;</span><br><span class="line">  font-size: 26rpx;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">/** 标签样式 */</span><br><span class="line">.wxSearchKeyList&#123;</span><br><span class="line">  display: flex;</span><br><span class="line">  flex-direction: row;</span><br><span class="line">  flex-wrap: wrap;</span><br><span class="line">  border-bottom: 2rpx solid #eee;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">/** 标签样式 */</span><br><span class="line">.wxSearchKeyItem&#123;</span><br><span class="line">  flex: 0 0 18%;</span><br><span class="line">  font-size: 26rpx;</span><br><span class="line">  text-align: center;</span><br><span class="line">  border: 2rpx solid #eee;</span><br><span class="line">  margin: 10rpx;</span><br><span class="line">  padding: 8rpx 10rpx 8rpx 10rpx;</span><br><span class="line">  border-radius: 0px;</span><br><span class="line">  background-color: rgba(200, 200, 200, 0.1);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">/** 搜索记录标题栏 */</span><br><span class="line">.wxSearchHistoryItem&#123;</span><br><span class="line">  padding-left: 20rpx;</span><br><span class="line">  padding-top: 20rpx;</span><br><span class="line">  padding-right: 10rpx;</span><br><span class="line">  padding-bottom: 10rpx;</span><br><span class="line">  display: flex;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">/** 搜索记录标题 */</span><br><span class="line">.wxSearchHistoryItemTitle&#123;</span><br><span class="line">  flex: 8;</span><br><span class="line">  font-size: 26rpx;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">/** 搜索记录删除按钮 */</span><br><span class="line">.wxSearchHistoryItemDel&#123;</span><br><span class="line">  flex: 1;</span><br><span class="line">  font-size: 26rpx;</span><br><span class="line">  text-align: center;</span><br><span class="line">  padding-top:4rpx;</span><br><span class="line">  padding-bottom: 4rpx;</span><br><span class="line">  border: 2rpx solid #eee;</span><br><span class="line">  border-radius: 4rpx;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">/** ---------------------- 以下是搜索框的 we-ui 样式--------------------------------*/</span><br><span class="line"></span><br><span class="line">/*!</span><br><span class="line"> * WeUI v1.1.1 (https://github.com/weui/weui-wxss)</span><br><span class="line"> * Copyright 2017 Tencent, Inc.</span><br><span class="line"> * Licensed under the MIT license</span><br><span class="line"> */</span><br><span class="line"></span><br><span class="line">.weui-search-bar &#123;</span><br><span class="line">  position: relative;</span><br><span class="line">  padding: 16rpx 20rpx;</span><br><span class="line">  display: -webkit-box;</span><br><span class="line">  display: -webkit-flex;</span><br><span class="line">  display: flex;</span><br><span class="line">  box-sizing: border-box;</span><br><span class="line">  background-color: #efeff4;</span><br><span class="line">  border-top: 1rpx solid #d7d6dc;</span><br><span class="line">  border-bottom: 1rpx solid #d7d6dc;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">.weui-icon-search &#123;</span><br><span class="line">  margin-right: 16rpx;</span><br><span class="line">  font-size: inherit;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">.weui-icon-search_in-box &#123;</span><br><span class="line">  position: absolute;</span><br><span class="line">  left: 12rpx;</span><br><span class="line">  top: 30rpx;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">.weui-search-bar__text &#123;</span><br><span class="line">  display: inline-block;</span><br><span class="line">  font-size: 28rpx;</span><br><span class="line">  vertical-align: middle;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">.weui-search-bar__form &#123;</span><br><span class="line">  position: relative;</span><br><span class="line">  -webkit-box-flex: 1;</span><br><span class="line">  -webkit-flex: auto;</span><br><span class="line">  flex: auto;</span><br><span class="line">  border-radius: 5px;</span><br><span class="line">  background: #fff;</span><br><span class="line">  border: 1rpx solid #e6e6ea;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">.weui-search-bar__box &#123;</span><br><span class="line">  position: relative;</span><br><span class="line">  padding-left: 30px;</span><br><span class="line">  padding-right: 30px;</span><br><span class="line">  width: 100%;</span><br><span class="line">  box-sizing: border-box;</span><br><span class="line">  z-index: 1;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">.weui-search-bar__input &#123;</span><br><span class="line">  height: 28px;</span><br><span class="line">  line-height: 28px;</span><br><span class="line">  font-size: 14px;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">.weui-icon-clear &#123;</span><br><span class="line">  position: absolute;</span><br><span class="line">  top: 0;</span><br><span class="line">  right: 0;</span><br><span class="line">  padding: 7px 8px;</span><br><span class="line">  font-size: 0;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">.weui-search-bar__label &#123;</span><br><span class="line">  position: absolute;</span><br><span class="line">  top: 0;</span><br><span class="line">  right: 0;</span><br><span class="line">  bottom: 0;</span><br><span class="line">  left: 0;</span><br><span class="line">  z-index: 2;</span><br><span class="line">  border-radius: 3px;</span><br><span class="line">  text-align: center;</span><br><span class="line">  color: #9b9b9b;</span><br><span class="line">  background: #fff;</span><br><span class="line">  line-height: 28px;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">.weui-search-bar__cancel-btn &#123;</span><br><span class="line">  margin-left: 10px;</span><br><span class="line">  line-height: 28px;</span><br><span class="line">  color: #09bb07;</span><br><span class="line">  white-space: nowrap;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br><span class="line">162</span><br><span class="line">163</span><br><span class="line">164</span><br><span class="line">165</span><br><span class="line">166</span><br><span class="line">167</span><br><span class="line">168</span><br><span class="line">169</span><br><span class="line">170</span><br><span class="line">171</span><br><span class="line">172</span><br><span class="line">173</span><br><span class="line">174</span><br><span class="line">175</span><br><span class="line">176</span><br><span class="line">177</span><br><span class="line">178</span><br></pre></td><td class="code"><pre><span class="line">// 提示集合</span><br><span class="line">var __tipKeys = [];</span><br><span class="line">// 搜索回调函数 </span><br><span class="line">var __searchFunction = null;</span><br><span class="line">// 返回函数 </span><br><span class="line">var __goBackFunction = null;</span><br><span class="line">// 应用变量</span><br><span class="line">var __that = null;</span><br><span class="line"></span><br><span class="line">// 初始化函数</span><br><span class="line">function init(that, hotKeys, tipKeys, searchFunction, goBackFunction) &#123;</span><br><span class="line"></span><br><span class="line">  __that = that;</span><br><span class="line">  __tipKeys = tipKeys;</span><br><span class="line">  __searchFunction = searchFunction;</span><br><span class="line">  __goBackFunction = goBackFunction;</span><br><span class="line"></span><br><span class="line">  var temData = &#123;&#125;;</span><br><span class="line">  var barHeight = 43;</span><br><span class="line">  var view = &#123;</span><br><span class="line">    barHeight: barHeight</span><br><span class="line">  &#125;</span><br><span class="line">  temData.hotKeys = hotKeys;</span><br><span class="line"></span><br><span class="line">  wx.getSystemInfo(&#123;</span><br><span class="line">    success: function (res) &#123;</span><br><span class="line">      var wHeight = res.windowHeight;</span><br><span class="line">      view.seachHeight = wHeight - barHeight;</span><br><span class="line">      temData.view = view;</span><br><span class="line">      __that.setData(&#123;</span><br><span class="line">        wxSearchData: temData</span><br><span class="line">      &#125;);</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;);</span><br><span class="line"></span><br><span class="line">  getHisKeys(__that);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">// 搜索框输入时候操作</span><br><span class="line">function wxSearchInput(e) &#123;</span><br><span class="line">  var inputValue = e.detail.value;</span><br><span class="line">  // 页面数据</span><br><span class="line">  var temData = __that.data.wxSearchData;</span><br><span class="line">  // 寻找提示值 </span><br><span class="line">  var tipKeys = [];</span><br><span class="line">  if (inputValue &amp;&amp; inputValue.length &gt; 0) &#123;</span><br><span class="line">    for (var i = 0; i &lt; __tipKeys.length; i++) &#123;</span><br><span class="line">      var mindKey = __tipKeys[i];</span><br><span class="line">      // 包含字符串</span><br><span class="line">      if (mindKey.indexOf(inputValue) != -1) &#123;</span><br><span class="line">        tipKeys.push(mindKey);</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">  // 更新数据</span><br><span class="line">  temData.value = inputValue;</span><br><span class="line">  temData.tipKeys = tipKeys;</span><br><span class="line">  // 更新视图</span><br><span class="line">  __that.setData(&#123;</span><br><span class="line">    wxSearchData: temData</span><br><span class="line">  &#125;);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">// 清空输入</span><br><span class="line">function wxSearchClear() &#123;</span><br><span class="line">  // 页面数据</span><br><span class="line">  var temData = __that.data.wxSearchData;</span><br><span class="line">  // 更新数据</span><br><span class="line">  temData.value = &quot;&quot;;</span><br><span class="line">  temData.tipKeys = [];</span><br><span class="line">  // 更新视图</span><br><span class="line">  __that.setData(&#123;</span><br><span class="line">    wxSearchData: temData</span><br><span class="line">  &#125;);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">// 点击提示或者关键字、历史记录时的操作</span><br><span class="line">function wxSearchKeyTap(e) &#123;</span><br><span class="line">  search(e.target.dataset.key);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">// 确任或者回车</span><br><span class="line">function wxSearchConfirm(e) &#123;</span><br><span class="line">  var key = e.target.dataset.key;</span><br><span class="line">  if (key == &apos;back&apos;) &#123;</span><br><span class="line">    __goBackFunction();</span><br><span class="line">  &#125; else &#123;</span><br><span class="line">    search(__that.data.wxSearchData.value);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">function search(inputValue) &#123;</span><br><span class="line">  if (inputValue &amp;&amp; inputValue.length &gt; 0) &#123;</span><br><span class="line">    // 添加历史记录</span><br><span class="line">    wxSearchAddHisKey(inputValue);</span><br><span class="line">    // 更新</span><br><span class="line">    var temData = __that.data.wxSearchData;</span><br><span class="line">    temData.value = inputValue;</span><br><span class="line">    __that.setData(&#123;</span><br><span class="line">      wxSearchData: temData</span><br><span class="line">    &#125;);</span><br><span class="line">    // 回调搜索</span><br><span class="line">    __searchFunction(inputValue);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">// 读取缓存</span><br><span class="line">function getHisKeys() &#123;</span><br><span class="line">  var value = [];</span><br><span class="line">  try &#123;</span><br><span class="line">    value = wx.getStorageSync(&apos;wxSearchHisKeys&apos;)</span><br><span class="line">    if (value) &#123;</span><br><span class="line">      // Do something with return value</span><br><span class="line">      var temData = __that.data.wxSearchData;</span><br><span class="line">      temData.his = value;</span><br><span class="line">      __that.setData(&#123;</span><br><span class="line">        wxSearchData: temData</span><br><span class="line">      &#125;);</span><br><span class="line">    &#125;</span><br><span class="line">  &#125; catch (e) &#123;</span><br><span class="line">    // Do something when catch error</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">// 添加缓存</span><br><span class="line">function wxSearchAddHisKey(inputValue) &#123;</span><br><span class="line">  if (!inputValue || inputValue.length == 0) &#123;</span><br><span class="line">    return;</span><br><span class="line">  &#125;</span><br><span class="line">  var value = wx.getStorageSync(&apos;wxSearchHisKeys&apos;);</span><br><span class="line">  if (value) &#123;</span><br><span class="line">    if (value.indexOf(inputValue) &lt; 0) &#123;</span><br><span class="line">      value.unshift(inputValue);</span><br><span class="line">    &#125;</span><br><span class="line">    wx.setStorage(&#123;</span><br><span class="line">      key: &quot;wxSearchHisKeys&quot;,</span><br><span class="line">      data: value,</span><br><span class="line">      success: function () &#123;</span><br><span class="line">        getHisKeys(__that);</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;)</span><br><span class="line">  &#125; else &#123;</span><br><span class="line">    value = [];</span><br><span class="line">    value.push(inputValue);</span><br><span class="line">    wx.setStorage(&#123;</span><br><span class="line">      key: &quot;wxSearchHisKeys&quot;,</span><br><span class="line">      data: value,</span><br><span class="line">      success: function () &#123;</span><br><span class="line">        getHisKeys(__that);</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;)</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">// 删除缓存</span><br><span class="line">function wxSearchDeleteAll() &#123;</span><br><span class="line">  wx.removeStorage(&#123;</span><br><span class="line">    key: &apos;wxSearchHisKeys&apos;,</span><br><span class="line">    success: function (res) &#123;</span><br><span class="line">      var value = [];</span><br><span class="line">      var temData = __that.data.wxSearchData;</span><br><span class="line">      temData.his = value;</span><br><span class="line">      __that.setData(&#123;</span><br><span class="line">        wxSearchData: temData</span><br><span class="line">      &#125;);</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">// 导出接口</span><br><span class="line">module.exports = &#123;</span><br><span class="line">  init: init, //初始化函数</span><br><span class="line">  wxSearchInput: wxSearchInput,// 输入变化时的操作</span><br><span class="line">  wxSearchKeyTap: wxSearchKeyTap, // 点击提示或者关键字、历史记录时的操作</span><br><span class="line">  wxSearchDeleteAll: wxSearchDeleteAll, // 删除所有的历史记录</span><br><span class="line">  wxSearchConfirm: wxSearchConfirm, // 搜索函数</span><br><span class="line">  wxSearchClear: wxSearchClear,  // 清空函数</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>###上面这个js是以后哪里需要调用即可 下面这个js是我自己调用的例子</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br></pre></td><td class="code"><pre><span class="line">// 1 导入js文件</span><br><span class="line">var WxSearch = require(&apos;../wxSearch/wxSearch.js&apos;);//写上面那个js的路径就行了</span><br><span class="line">Page(&#123;</span><br><span class="line">  data: &#123;&#125;,</span><br><span class="line">  onLoad: function () &#123;</span><br><span class="line">    // 2 搜索栏初始化</span><br><span class="line">    var that = this;</span><br><span class="line">    WxSearch.init(</span><br><span class="line">      that,  // 本页面一个引用</span><br><span class="line">      [&apos;搜索内容&apos;, &apos;搜索内容&apos;, &quot;搜索内容&quot;, &quot;搜索内容&quot;, &apos;搜索内容&apos;, &apos;搜索内容&apos;], // 热点搜索推荐，[]表示不使用</span><br><span class="line">      [&apos;搜索的相关内容&apos;, &apos;搜索的相关内容&apos;, &apos;搜索的相关内容&apos;, &quot;搜索的相关内容&quot;],// 搜索匹配，[]表示不使用</span><br><span class="line">      that.mySearchFunction, // 提供一个搜索回调函数</span><br><span class="line">      that.myGobackFunction //提供一个返回回调函数</span><br><span class="line">    );</span><br><span class="line"></span><br><span class="line">  &#125;,</span><br><span class="line"></span><br><span class="line">  // 3 转发函数，固定部分，直接拷贝即可</span><br><span class="line">  wxSearchInput: WxSearch.wxSearchInput,  // 输入变化时的操作</span><br><span class="line">  wxSearchKeyTap: WxSearch.wxSearchKeyTap,  // 点击提示或者关键字、历史记录时的操作</span><br><span class="line">  wxSearchDeleteAll: WxSearch.wxSearchDeleteAll, // 删除所有的历史记录</span><br><span class="line">  wxSearchConfirm: WxSearch.wxSearchConfirm,  // 搜索函数</span><br><span class="line">  wxSearchClear: WxSearch.wxSearchClear,  // 清空函数</span><br><span class="line"></span><br><span class="line">  // 4 搜索回调函数  </span><br><span class="line">  mySearchFunction: function (value) &#123;</span><br><span class="line">    // do your job here</span><br><span class="line">    // 示例：跳转</span><br><span class="line">    wx.redirectTo(&#123;</span><br><span class="line">      url: &apos;../index/index?searchValue=&apos; + value</span><br><span class="line">    &#125;)</span><br><span class="line">  &#125;,</span><br><span class="line"></span><br><span class="line">  // 5 返回回调函数</span><br><span class="line">  myGobackFunction: function () &#123;</span><br><span class="line">    // do your job here</span><br><span class="line">    // 示例：返回</span><br><span class="line">    wx.redirectTo(&#123;</span><br><span class="line">      url: &apos;../index/index?searchValue=返回&apos;</span><br><span class="line">    &#125;)</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+      
+    </div>
+    
+    
+    
+
+<div>
+      
+        
+<div class="my_post_copyright">
+  <script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
+  
+  <!-- JS库 sweetalert 可修改路径 -->
+  <script src="https://cdn.bootcss.com/jquery/2.0.0/jquery.min.js"></script>
+  <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+  <p><span>本文标题:</span><a href="/2019/09/25/微信小程序搜索功能/">微信小程序搜索功能</a></p>
+  <p><span>文章作者:</span><a href="/" title="访问 七月 的个人博客">七月</a></p>
+  <p><span>发布时间:</span>2019年09月25日 - 00:09</p>
+  <p><span>最后更新:</span>2019年09月25日 - 00:09</p>
+  <p><span>原始链接:</span><a href="/2019/09/25/微信小程序搜索功能/" title="微信小程序搜索功能">http://yuqiqi.com/2019/09/25/微信小程序搜索功能/</a>
+    <span class="copy-path" title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="http://yuqiqi.com/2019/09/25/微信小程序搜索功能/" aria-label="复制成功！"></i></span>
+  </p>
+  <p><span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank" title="Attribution-NonCommercial-NoDerivatives 4.0 International (CC BY-NC-ND 4.0)">署名-非商业性使用-禁止演绎 4.0 国际</a> 转载请保留原文链接及作者。</p>  
+</div>
+<script> 
+    var clipboard = new Clipboard('.fa-clipboard');
+    $(".fa-clipboard").click(function(){
+      clipboard.on('success', function(){
+        swal({   
+          title: "",   
+          text: '复制成功',
+          icon: "success", 
+          showConfirmButton: true
+          });
+    });
+    });  
+</script>
+
+      
+</div>
+
+    
+
+    
+      <div>
+        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+  <div>坚持原创技术分享，您的支持将鼓励我继续创作！</div>
+  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+    <span>打赏</span>
+  </button>
+  <div id="QR" style="display: none;">
+
+    
+
+    
+      <div id="alipay" style="display: inline-block">
+        <img id="alipay_qr" src="/images/alipay.jpg" alt="七月 支付宝">
+        <p>支付宝</p>
+      </div>
+    
+
+    
+
+  </div>
+</div>
+
+      </div>
+    
+
+    
+      <div>
+        
+           <div>
+    
+        <div style="text-align:center;color: #ccc;font-size:14px;">-------------本文结束❤感谢您的阅读-------------</div>
+    
+</div>
+        
+      </div>
+    <footer class="post-footer">
+      
+
+      
+      
+        <div class="post-widgets">
+        
+          <div class="wp_rating">
+            <div id="wpac-rating"></div>
+          </div>
+        
+
+        
+
+        
+        </div>
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/09/25/微信小程序下拉框/" rel="next" title="微信小程序下拉框">
+                <i class="fa fa-chevron-left"></i> 微信小程序下拉框
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+    
+        <!--MOB SHARE BEGIN-->
+<div class="-hoofoo-share-title">分享到: </div>
+<div class="-hoofoo-share-buttons">
+    <div class="-mob-share-weibo -hoofoo-share-weibo -hoofoo-share-ui-button"><i class="fa fa-weibo" aria-hidden="true"></i></div>
+    <div class="-mob-share-weixin -hoofoo-share-weixin -hoofoo-share-ui-button"><i class="fa fa-weixin" aria-hidden="true"></i></div>
+    <div class="-mob-share-qq -hoofoo-share-qq -hoofoo-share-ui-button"><i class="fa fa-qq" aria-hidden="true"></i></div>
+    <div class="-mob-share-twitter -hoofoo-share-twitter -hoofoo-share-ui-button"><i class="fa fa-twitter" aria-hidden="true"></i></div>
+    <div class="-hoofoo-share-more -hoofoo-share-ui-button -mob-share-open"><i class="fa fa-ellipsis-h" aria-hidden="true"></i></div>
+</div>
+<div class="-mob-share-ui" style="display: none">
+    <ul class="-mob-share-list">
+        <li class="-mob-share-weibo"><p>新浪微博</p></li>
+        <li class="-mob-share-weixin"><p>微信</p></li>
+        <li class="-mob-share-qzone"><p>QQ空间</p></li>
+        <li class="-mob-share-qq"><p>QQ好友</p></li>
+        <li class="-mob-share-tencentweibo"><p>腾讯微博</p></li>
+        <li class="-mob-share-renren"><p>人人网</p></li>
+        <li class="-mob-share-kaixin"><p>开心网</p></li>
+        <li class="-mob-share-douban"><p>豆瓣</p></li>
+        <li class="-mob-share-youdao"><p>有道云笔记</p></li>
+        <li class="-mob-share-mingdao"><p>明道</p></li>
+        <li class="-mob-share-pengyou"><p>朋友网</p></li>
+        <li class="-mob-share-facebook"><p>Facebook</p></li>
+        <li class="-mob-share-twitter"><p>Twitter</p></li>
+        <li class="-mob-share-pocket"><p>Pocket</p></li>
+        <li class="-mob-share-google"><p>Google+</p></li>
+        <li class="-mob-share-tumblr"><p>Tumblr</p></li>
+        <li class="-mob-share-instapaper"><p>Instapaper</p></li>
+        <li class="-mob-share-linkedin"><p>Linkedin</p></li>
+    </ul>
+    <div class="-mob-share-close">取消</div>
+</div>
+<div class="-mob-share-ui-bg"></div>
+<script id="-mob-share" src="http://f1.webshare.mob.com/code/mob-share.js?appkey=2c8d140a433dc"></script>
+<!--MOB SHARE END-->
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+    <div class="comments" id="comments">
+      <div id="lv-container" data-id="city" data-uid="MTAyMC80Njc2MC8yMzI2Mg=="></div>
+    </div>
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+
+      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image" src="/images/favicon.jpg" alt="七月">
+            
+              <p class="site-author-name" itemprop="name">七月</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">4</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">1</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                
+                  <span class="site-state-item-count">4</span>
+                  <span class="site-state-item-name">标签</span>
+                
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/yueqiqi" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+
+          
+        </div>
+      </section>
+
+      
+
+      
+        <div class="back-to-top">
+          <i class="fa fa-arrow-up"></i>
+          
+            <span id="scrollpercent"><span>0</span>%</span>
+          
+        </div>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="fa fa-">❤</i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">七月</span>
+
+  
+</div>
+
+
+  <div class="powered-by">  个人专属</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">博客-yueqiqi.top</div>
+
+
+
+
+        
+<div class="busuanzi-count">
+  <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv">
+      本站访客数
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+      次
+    </span>
+  
+
+  
+    <span class="site-pv">
+      本站总访问量
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+      次
+    </span>
+  
+</div>
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+
+    
+
+  </div>
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+    <script type="text/javascript">
+      (function(d, s) {
+        var j, e = d.getElementsByTagName(s)[0];
+        if (typeof LivereTower === 'function') { return; }
+        j = d.createElement(s);
+        j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+        j.async = true;
+        e.parentNode.insertBefore(j, e);
+      })(document, 'script');
+    </script>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+  <script type="text/javascript">
+  wpac_init = window.wpac_init || [];
+  wpac_init.push({widget: 'Rating', id: ,
+    el: 'wpac-rating',
+    color: 'fc6423'
+  });
+  (function() {
+    if ('WIDGETPACK_LOADED' in window) return;
+    WIDGETPACK_LOADED = true;
+    var mc = document.createElement('script');
+    mc.type = 'text/javascript';
+    mc.async = true;
+    mc.src = '//embed.widgetpack.com/widget.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(mc, s.nextSibling);
+  })();
+  </script>
+
+
+  
+
+  
+
+  
+
+  
+<script type="text/javascript">
+    $('body').delegate('.-mob-share-weixin-qrcode-bg','click', function(){
+         $(".-mob-share-weixin-qrcode-close").trigger("click");
+    }); 
+</script>
+
+
+ <script type="text/javascript" src="/js/src/dytitle.js"></script>
+ <!-- 页面点击小红心 -->
+<script type="text/javascript" src="/js/src/clicklove.js"></script>
+<div>
+<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="530" height="86" auto="1" src="//music.163.com/outchain/player?type=2&id=1361361877&auto=1&height=66"></iframe>
+</div>
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"log":false,"pluginJsPath":"lib/","pluginModelPath":"assets/","pluginRootPath":"live2dw/","tagMode":false});</script></body>
+</html>
