@@ -1,0 +1,1174 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon.jng?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon.jpg?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Hexo, NexT">
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="七月先森的独立博客" type="application/atom+xml">
+
+
+
+
+
+
+<meta name="description" content="微信小程序三级联动省市区选择器">
+<meta property="og:type" content="article">
+<meta property="og:title" content="微信小程序相关功功能">
+<meta property="og:url" content="http://yuqiqi.com/2019/09/28/微信小程序相关功功能/index.html">
+<meta property="og:site_name" content="七月先森的独立博客">
+<meta property="og:description" content="微信小程序三级联动省市区选择器">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="http://yuqiqi.com/images/select2.png">
+<meta property="og:image" content="http://yuqiqi.com/images/radio.png">
+<meta property="og:image" content="http://yuqiqi.com/images/tabbar.png">
+<meta property="og:updated_time" content="2019-10-06T05:55:56.530Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="微信小程序相关功功能">
+<meta name="twitter:description" content="微信小程序三级联动省市区选择器">
+<meta name="twitter:image" content="http://yuqiqi.com/images/select2.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":true,"scrollpercent":true,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yuqiqi.com/2019/09/28/微信小程序相关功功能/">
+
+
+
+
+<script src="//cdn.bootcss.com/pace/1.0.2/pace.min.js"></script>
+<link href="//cdn.bootcss.com/pace/1.0.2/themes/pink/pace-theme-flash.css" rel="stylesheet">
+<style>
+    .pace .pace-progress {
+        background: #ff009e; /*进度条颜色*/
+        height: 3px;
+    }
+    .pace .pace-progress-inner {
+         box-shadow: 0 0 10px #ff009e, 0 0 5px #ff009e; /*阴影颜色*/
+    }
+    .pace .pace-activity {
+        border-top-color: #ff009e;    /*上边框颜色*/
+        border-left-color: #ff009e;    /*左边框颜色*/
+    }
+</style>
+
+  <title>微信小程序相关功功能 | 七月先森的独立博客</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband">
+      <a href="https://github.com/yueqiqi" class="github-corner" aria-label="View source on GitHub"><svg width="80" height="80" viewbox="0 0 250 250" style="fill:#151513; color:#fff; position: absolute; top: 0; border: 0; right: 0;" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"/><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"/><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"/></svg></a><style>.github-corner:hover .octo-arm{animation:octocat-wave 560ms ease-in-out}@keyframes octocat-wave{0%,100%{transform:rotate(0)}20%,60%{transform:rotate(-25deg)}40%,80%{transform:rotate(10deg)}}@media (max-width:500px){.github-corner:hover .octo-arm{animation:none}.github-corner .octo-arm{animation:octocat-wave 560ms ease-in-out}}</style>
+    </div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">七月先森的独立博客</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">爱生活 爱编程</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br>
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-schedule">
+          <a href="/schedule/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-calendar"></i> <br>
+            
+            日程表
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-sitemap">
+          <a href="/sitemap.xml" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-sitemap"></i> <br>
+            
+            站点地图
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-commonweal">
+          <a href="/404/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-heartbeat"></i> <br>
+            
+            公益404
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yuqiqi.com/2019/09/28/微信小程序相关功功能/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="七月">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/favicon.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="七月先森的独立博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">微信小程序相关功功能</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-09-28T21:38:18+08:00">
+                2019-09-28
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+             <span id="/2019/09/28/微信小程序相关功功能/" class="leancloud_visitors" data-flag-title="微信小程序相关功功能">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数&#58;</span>
+               
+                 <span class="leancloud-visitors-count">|</span>
+             </span>
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="page-pv"><i class="fa fa-file-o"></i> 本文总阅读量
+            <span class="busuanzi-value" id="busuanzi_value_page_pv"></span>次
+            </span>
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  4k
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  22
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="微信小程序三级联动省市区选择器"><a href="#微信小程序三级联动省市区选择器" class="headerlink" title="微信小程序三级联动省市区选择器"></a>微信小程序三级联动省市区选择器</h1><p><img src="/images/select2.png" alt></p>
+<a id="more"></a>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;！ -  modelTest.wxml  - &gt;</span><br><span class="line">&lt;import src =&quot;../../ model / model.wxml&quot;/&gt;      /*引入从下而上的弹出框*/</span><br><span class="line">&lt;view class =&quot;infoText”&gt; &#123;&#123;province&#125;&#125; &#123;&#123;city&#125;&#125; &#123;&#123;county&#125;&#125; &lt;/ view&gt;</span><br><span class="line">&lt;button class =&quot;animation-button&quot; bindtap =&quot;translate&quot;&gt;选择城市&lt;/ button&gt;</span><br><span class="line">&lt;template is =&quot;areaData&quot; data =&quot;&#123;&#123;... item&#125;&#125;&quot; /&gt;/*这里的is是model.wxml中template的name*/</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br></pre></td><td class="code"><pre><span class="line">&lt;！ -  modelTest.js  - &gt;</span><br><span class="line"> model = require(&apos;../../model/model.js&apos;)//引入model.js</span><br><span class="line"></span><br><span class="line">var show = false;</span><br><span class="line">var item = &#123;&#125;;</span><br><span class="line"></span><br><span class="line">Page(&#123;</span><br><span class="line">  data: &#123;</span><br><span class="line">    item: &#123;</span><br><span class="line">      show: show</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;,</span><br><span class="line">   //生命周期函数--监听页面初次渲染完成</span><br><span class="line">  onReady: function (e) &#123;</span><br><span class="line">    var that = this;</span><br><span class="line">    //请求数据</span><br><span class="line">    model.updateAreaData(that, 0, e);</span><br><span class="line">  &#125;,</span><br><span class="line">  //点击选择城市按钮显示picker-view</span><br><span class="line">  translate: function (e) &#123;</span><br><span class="line">    model.animationEvents(this, 0, true,400);  </span><br><span class="line">  &#125;,</span><br><span class="line">  //隐藏picker-view</span><br><span class="line">  hiddenFloatView: function (e) &#123;</span><br><span class="line">    console.log(&quot;id = &quot; + e.target.dataset.id)</span><br><span class="line">    model.animationEvents(this, 200, false,400);</span><br><span class="line">    //点击确定按钮更新数据(id=444是背后透明蒙版 id=555是取消按钮)</span><br><span class="line">    if (e.target.dataset.id == 666)&#123;</span><br><span class="line">      this.updateShowData()</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;,</span><br><span class="line">  //滑动事件</span><br><span class="line">  bindChange: function (e) &#123;</span><br><span class="line">    model.updateAreaData(this, 1, e);</span><br><span class="line">    //如果想滑动的时候不实时更新，只点确定的时候更新，注释掉下面这行代码即可。</span><br><span class="line">    this.updateShowData()</span><br><span class="line">  &#125;,</span><br><span class="line">  //更新顶部展示的数据</span><br><span class="line">  updateShowData:function(e)&#123;</span><br><span class="line">    item = this.data.item;</span><br><span class="line">    this.setData(&#123;</span><br><span class="line">      province: item.provinces[item.value[0]].name,</span><br><span class="line">      city: item.citys[item.value[1]].name,</span><br><span class="line">      county: item.countys[item.value[2]].name</span><br><span class="line">    &#125;);</span><br><span class="line">  &#125;</span><br><span class="line">  ,</span><br><span class="line">  onReachBottom: function ()&#123;</span><br><span class="line">  &#125;,</span><br><span class="line">  nono: function ()&#123;&#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&lt;！ -  modelTest.wxss  - &gt;</span><br><span class="line">@import &apos;../../model/model.wxss&apos;</span><br></pre></td></tr></table></figure>
+
+<p>下面就是model的代码</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><span class="line">&lt;!--model.wxml--&gt;</span><br><span class="line">&lt;template name=&quot;msgItem&quot;&gt;</span><br><span class="line">  &lt;view class = &apos;centerText&apos;&gt;</span><br><span class="line">    &lt;text&gt; &#123;&#123;index&#125;&#125;: &#123;&#123;msg&#125;&#125; &lt;/text&gt;</span><br><span class="line">    &lt;text&gt; Time: &#123;&#123;time&#125;&#125; &lt;/text&gt;</span><br><span class="line">  &lt;/view&gt;</span><br><span class="line">&lt;/template&gt;</span><br><span class="line"></span><br><span class="line">&lt;!-- --------------分割线------------- --&gt;</span><br><span class="line"></span><br><span class="line">&lt;template name=&quot;areaData&quot;&gt;</span><br><span class="line">  &lt;view class=&quot;animation-element-wrapper&quot; animation=&quot;&#123;&#123;animation&#125;&#125;&quot; style=&quot;visibility:&#123;&#123;show ? &apos;visible&apos;:&apos;hidden&apos;&#125;&#125;&quot; bindtap=&quot;hiddenFloatView&quot; data-id=&quot;444&quot;&gt;</span><br><span class="line">     &lt;view class=&quot;animation-element&quot; catchtap=&quot;nono&quot;&gt;</span><br><span class="line">        &lt;text class=&quot;left-bt&quot; catchtap=&quot;hiddenFloatView&quot; data-id=&quot;555&quot;&gt;取消&lt;/text&gt;</span><br><span class="line">        &lt;text class=&quot;right-bt&quot; catchtap=&quot;hiddenFloatView&quot; data-id=&quot;666&quot;&gt;确定&lt;/text&gt;</span><br><span class="line">          &lt;view class=&quot;line&quot;&gt;&lt;/view&gt; </span><br><span class="line"></span><br><span class="line">        &lt;picker-view indicator-style = &quot;height: 50rpx;&quot; value=&quot;&#123;&#123;value&#125;&#125;&quot; bindchange=&quot;bindChange&quot; catchtap=&quot;nono&quot;&gt;</span><br><span class="line">        &lt;!--省--&gt;</span><br><span class="line">        &lt;picker-view-column&gt;</span><br><span class="line">           &lt;view wx:for=&quot;&#123;&#123;provinces&#125;&#125;&quot; wx:for-item=&quot;sheng&quot; wx:key=&quot;&quot;&gt;</span><br><span class="line">             &#123;&#123;sheng.name&#125;&#125;</span><br><span class="line">          &lt;/view&gt;</span><br><span class="line">        &lt;/picker-view-column&gt;</span><br><span class="line">        &lt;!--地级市--&gt;</span><br><span class="line">        &lt;picker-view-column&gt;</span><br><span class="line">          &lt;view wx:for=&quot;&#123;&#123;citys&#125;&#125;&quot; wx:for-item=&quot;shi&quot; wx:key=&quot;&quot;&gt;</span><br><span class="line">            &#123;&#123;shi.name&#125;&#125;</span><br><span class="line">          &lt;/view&gt;</span><br><span class="line">        &lt;/picker-view-column&gt;</span><br><span class="line">        &lt;!--区县--&gt;</span><br><span class="line">        &lt;picker-view-column&gt;</span><br><span class="line">          &lt;view wx:for=&quot;&#123;&#123;countys&#125;&#125;&quot; wx:for-item=&quot;xian&quot; wx:key=&quot;&quot;&gt;</span><br><span class="line">            &#123;&#123;xian.name&#125;&#125;</span><br><span class="line">          &lt;/view&gt;</span><br><span class="line">        &lt;/picker-view-column&gt;</span><br><span class="line">        &lt;/picker-view&gt;</span><br><span class="line">    &lt;/view&gt;</span><br><span class="line">  &lt;/view&gt;</span><br><span class="line">&lt;/template&gt;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br></pre></td><td class="code"><pre><span class="line">/* model.wxss */</span><br><span class="line">page&#123;</span><br><span class="line">  background-color: rgba(255, 255, 255, 1); </span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">.infoText&#123;</span><br><span class="line">    margin-top: 20rpx;</span><br><span class="line">    text-align: center;</span><br><span class="line">    width: 100%;</span><br><span class="line">    justify-content: center; </span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">.centerText&#123;</span><br><span class="line">  margin-top: 100rpx;</span><br><span class="line">  width: 100%;</span><br><span class="line">  text-align: center;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">/* --------------分割线------------- */</span><br><span class="line"></span><br><span class="line">picker-view&#123;</span><br><span class="line">  background-color: white;</span><br><span class="line">  padding: 0;</span><br><span class="line">  width: 100%; </span><br><span class="line">  height: 380rpx;</span><br><span class="line">  bottom: 0;</span><br><span class="line">  position: fixed;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">picker-view-column view&#123;</span><br><span class="line">  vertical-align:middle; </span><br><span class="line">  font-size: 28rpx;</span><br><span class="line">  line-height: 28rpx;</span><br><span class="line">  height: 100%;</span><br><span class="line">  display: flex;</span><br><span class="line">  align-items: center;</span><br><span class="line">  justify-content: center;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">.animation-element-wrapper &#123;</span><br><span class="line">  display: flex;  </span><br><span class="line">  position: fixed;</span><br><span class="line">  left: 0;</span><br><span class="line">  top:0;</span><br><span class="line">  height: 100%;</span><br><span class="line">  width: 100%;</span><br><span class="line">  background-color: rgba(0, 0, 0, 0.6);</span><br><span class="line">&#125;</span><br><span class="line">.animation-element &#123;</span><br><span class="line">  display: flex;</span><br><span class="line">  position: fixed;</span><br><span class="line">  width: 100%;</span><br><span class="line">  height: 470rpx;</span><br><span class="line">  bottom: 0;</span><br><span class="line">  background-color: rgba(255, 255, 255, 1);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">.animation-button &#123;</span><br><span class="line">  margin-top: 20rpx;</span><br><span class="line">  top:20rpx;</span><br><span class="line">  width: 400rpx;</span><br><span class="line">  height: 100rpx; </span><br><span class="line">  line-height: 100rpx; </span><br><span class="line">  align-items:center;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">.animation-element text&#123;</span><br><span class="line">  color: #999999;</span><br><span class="line">  display: inline-flex;  </span><br><span class="line">  position: fixed;</span><br><span class="line">  margin-top: 20rpx;</span><br><span class="line">  height: 50rpx;</span><br><span class="line">  text-align: center;</span><br><span class="line">  line-height: 50rpx;</span><br><span class="line">  font-size: 34rpx;</span><br><span class="line">  font-family: Arial, Helvetica, sans-serif;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">.left-bt&#123;</span><br><span class="line">  left: 30rpx;</span><br><span class="line">&#125;</span><br><span class="line">.right-bt &#123;</span><br><span class="line">  right: 30rpx;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">.line&#123;</span><br><span class="line">  display: block;</span><br><span class="line">  position: fixed;</span><br><span class="line">  height: 1rpx;</span><br><span class="line">  width: 100%;</span><br><span class="line">  margin-top: 89rpx; </span><br><span class="line">  background-color: #eeeeee;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br></pre></td><td class="code"><pre><span class="line">// model.js</span><br><span class="line">var area = require(&apos;../utils/area.js&apos;)</span><br><span class="line">var areaInfo = [];//所有省市区县数据</span><br><span class="line">var provinces = [];//省</span><br><span class="line">var citys = [];//城市</span><br><span class="line">var countys = [];//区县</span><br><span class="line">var value = [0, 0, 0];//数据位置下标</span><br><span class="line">var info = &#123;&#125;;</span><br><span class="line">function updateAreaData(that, status, e) &#123;</span><br><span class="line">  //获取省份数据</span><br><span class="line">  var getProvinceData = function () &#123;</span><br><span class="line">    var s;</span><br><span class="line">    provinces = [];</span><br><span class="line">    var num = 0;</span><br><span class="line">    for (var i = 0; i &lt; areaInfo.length; i++) &#123;</span><br><span class="line">      s = areaInfo[i];</span><br><span class="line">      if (s.di == &quot;00&quot; &amp;&amp; s.xian == &quot;00&quot;) &#123;</span><br><span class="line">        provinces[num] = s;</span><br><span class="line">        num++;</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    //初始化调一次</span><br><span class="line">    //获取地级市数据</span><br><span class="line">    getCityArr();</span><br><span class="line">    //获取区县数据</span><br><span class="line">    getCountyInfo();</span><br><span class="line"></span><br><span class="line">    //模型赋值</span><br><span class="line">    info = &#123;</span><br><span class="line">      item: &#123;</span><br><span class="line">        provinces: provinces,</span><br><span class="line">        citys: citys,</span><br><span class="line">        countys: countys,</span><br><span class="line">        value: value</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    animationEvents(that, 200, false, 0);</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  // 获取地级市数据</span><br><span class="line">  var getCityArr = function (count = 0) &#123;</span><br><span class="line">    var c;</span><br><span class="line">    citys = [];</span><br><span class="line">    var num = 0;</span><br><span class="line">    for (var i = 0; i &lt; areaInfo.length; i++) &#123;</span><br><span class="line">      c = areaInfo[i];</span><br><span class="line">      if (c.xian == &quot;00&quot; &amp;&amp; c.sheng == provinces[count].sheng &amp;&amp; c.di != &quot;00&quot;) &#123;</span><br><span class="line">        citys[num] = c;</span><br><span class="line">        num++;</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    if (citys.length == 0) &#123;</span><br><span class="line">      citys[0] = &#123; name: &apos;&apos; &#125;;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  // 获取区县数据</span><br><span class="line">  var getCountyInfo = function (column0 = 0, column1 = 0) &#123;</span><br><span class="line">    var c;</span><br><span class="line">    countys = [];</span><br><span class="line">    var num = 0;</span><br><span class="line">    for (var i = 0; i &lt; areaInfo.length; i++) &#123;</span><br><span class="line">      c = areaInfo[i];</span><br><span class="line">      if (c.xian != &quot;00&quot; &amp;&amp; c.sheng == provinces[column0].sheng &amp;&amp; c.di == citys[column1].di) &#123;</span><br><span class="line">        countys[num] = c;</span><br><span class="line">        num++;</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    if (countys.length == 0) &#123;</span><br><span class="line">      countys[0] = &#123; name: &apos;&apos; &#125;;</span><br><span class="line">    &#125;</span><br><span class="line">    value = [column0, column1, 0];</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  //滑动事件</span><br><span class="line">  var valueChange = function (e, that) &#123;</span><br><span class="line">    var val = e.detail.value</span><br><span class="line">    console.log(e)</span><br><span class="line">    //判断滑动的是第几个column</span><br><span class="line">    //若省份column做了滑动则定位到地级市和区县第一位</span><br><span class="line">    if (value[0] != val[0]) &#123;</span><br><span class="line">      val[1] = 0;</span><br><span class="line">      val[2] = 0;</span><br><span class="line">      getCityArr(val[0]);//获取地级市数据</span><br><span class="line">      getCountyInfo(val[0], val[1]);//获取区县数据</span><br><span class="line">    &#125; else &#123;    //若省份column未做滑动，地级市做了滑动则定位区县第一位</span><br><span class="line">      if (value[1] != val[1]) &#123;</span><br><span class="line">        val[2] = 0;</span><br><span class="line">        getCountyInfo(val[0], val[1]);//获取区县数据</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    value = val;</span><br><span class="line"></span><br><span class="line">    assignmentData(that, that.data.item.show)</span><br><span class="line"></span><br><span class="line">    console.log(val);</span><br><span class="line"></span><br><span class="line">    //回调</span><br><span class="line">    //callBack(val);</span><br><span class="line"></span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  if (status == 0) &#123;</span><br><span class="line">    area.getAreaInfo(function (arr) &#123;</span><br><span class="line">      areaInfo = arr;</span><br><span class="line">      //获取省份数据</span><br><span class="line">      getProvinceData();</span><br><span class="line"></span><br><span class="line">    &#125;);</span><br><span class="line">  &#125;</span><br><span class="line">  //滑动事件</span><br><span class="line">  else &#123;</span><br><span class="line">    valueChange(e, that);</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">//动画事件</span><br><span class="line">function animationEvents(that, moveY, show, duration) &#123;</span><br><span class="line">  console.log(&quot;moveY:&quot; + moveY + &quot;\nshow:&quot; + show);</span><br><span class="line">  that.animation = wx.createAnimation(&#123;</span><br><span class="line">    transformOrigin: &quot;50% 50%&quot;,</span><br><span class="line">    duration: duration,</span><br><span class="line">    timingFunction: &quot;ease&quot;,</span><br><span class="line">    delay: 0</span><br><span class="line">  &#125;)</span><br><span class="line">  that.animation.translateY(moveY + &apos;vh&apos;).step()</span><br><span class="line">  //赋值</span><br><span class="line">  assignmentData(that, show)</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">//赋值</span><br><span class="line">function assignmentData(that, show) &#123;</span><br><span class="line">  that.setData(&#123;</span><br><span class="line">    item: &#123;</span><br><span class="line">      animation: that.animation.export(),</span><br><span class="line">      show: show,</span><br><span class="line">      provinces: provinces,</span><br><span class="line">      citys: citys,</span><br><span class="line">      countys: countys,</span><br><span class="line">      value: value</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">module.exports = &#123;</span><br><span class="line">  updateAreaData: updateAreaData,</span><br><span class="line">  animationEvents: animationEvents</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>由于area的代码量较大所以请移步本人github下载即可<br>github地址：<a href="https://github.com/yueqiqi/tushifang2/blob/master/%E7%9C%81%E5%B8%82%E5%8C%BA%E4%B8%89%E7%BA%A7%E8%81%94%E5%8A%A8/utils/area.js" target="_blank" rel="noopener">https://github.com/yueqiqi/tushifang2/blob/master/%E7%9C%81%E5%B8%82%E5%8C%BA%E4%B8%89%E7%BA%A7%E8%81%94%E5%8A%A8/utils/area.js</a></p>
+<h1 id="微信小程序上传图片功能"><a href="#微信小程序上传图片功能" class="headerlink" title="微信小程序上传图片功能"></a>微信小程序上传图片功能</h1><!-- more -->
+<h2 id="不带上传到后台的功能"><a href="#不带上传到后台的功能" class="headerlink" title="不带上传到后台的功能"></a>不带上传到后台的功能</h2><iframe width="500" height="700" src="/images/GIF.gif"></iframe>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">&lt;!-- wxml --&gt;</span><br><span class="line">&lt;!-- 容器 --&gt;</span><br><span class="line">&lt;view class=&apos;ui_uploader_cell&apos;&gt;</span><br><span class="line">    &lt;!-- 根据已选择的图片临时路径数组展示图片--&gt;</span><br><span class="line">    &lt;view class=&apos;ui_uploader_item&apos; wx:for=&quot;&#123;&#123;uploaderList&#125;&#125;&quot; wx:key=&quot;&#123;&#123;index&#125;&#125;&quot;&gt;</span><br><span class="line">        &lt;!-- 删除小红叉--&gt;</span><br><span class="line">        &lt;!-- data-index自定义属性 --&gt;</span><br><span class="line">        &lt;icon class=&apos;ui_uploader_item_icon&apos; bindtap=&apos;clearImg&apos; data-index=&quot;&#123;&#123;index&#125;&#125;&quot; type=&quot;clear&quot; size=&quot;20&quot; color=&quot;red&quot;/&gt;</span><br><span class="line">        &lt;!-- 图片--&gt;</span><br><span class="line">        &lt;image bindtap=&apos;showImg&apos; data-index=&quot;&#123;&#123;index&#125;&#125;&quot; src=&apos;&#123;&#123;item&#125;&#125;&apos;&gt;&lt;/image&gt;</span><br><span class="line">    &lt;/view&gt;</span><br><span class="line">    &lt;!-- 上传按钮+框 --&gt;</span><br><span class="line">    &lt;view class=&apos;ui_uploader&apos; bindtap=&apos;upload&apos; wx:if=&quot;&#123;&#123;showUpload&#125;&#125;&quot;&gt;&lt;/view&gt;</span><br><span class="line">&lt;/view&gt;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br></pre></td><td class="code"><pre><span class="line">&lt;!-- js --&gt;</span><br><span class="line">初始值</span><br><span class="line">page(&#123;</span><br><span class="line">  data:&#123;</span><br><span class="line">    uploadList:[],//已选择的图片临时路径数组</span><br><span class="line">    uploadNum:0,//已选择的图片个数</span><br><span class="line">    showUpload:true,//用来判断图片是否超过9张，当超过限定值不可继续上传</span><br><span class="line">  &#125;</span><br><span class="line">  // 删除图片</span><br><span class="line">    clearImg:function(e)&#123;</span><br><span class="line">        var nowList = [];//新数据</span><br><span class="line">        var uploaderList = this.data.uploaderList;//原数据</span><br><span class="line">        </span><br><span class="line">        for (let i = 0; i &lt; uploaderList.length;i++)&#123;</span><br><span class="line">            if (i == e.currentTarget.dataset.index)&#123;</span><br><span class="line">                continue;</span><br><span class="line">            &#125;else&#123;</span><br><span class="line">                nowList.push(uploaderList[i])</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        this.setData(&#123;</span><br><span class="line">            uploaderNum: this.data.uploaderNum - 1,</span><br><span class="line">            uploaderList: nowList,</span><br><span class="line">            showUpload: true</span><br><span class="line">        &#125;)</span><br><span class="line">    &#125;,</span><br><span class="line">    //展示图片</span><br><span class="line">    showImg:function(e)&#123;</span><br><span class="line">        var that=this;</span><br><span class="line">        wx.previewImage(&#123;</span><br><span class="line">            urls: that.data.uploaderList,</span><br><span class="line">            current: that.data.uploaderList[e.currentTarget.dataset.index]</span><br><span class="line">        &#125;)</span><br><span class="line">    &#125;,</span><br><span class="line">    //上传图片</span><br><span class="line">    upload: function(e) &#123;</span><br><span class="line">        var that = this;</span><br><span class="line">        wx.chooseImage(&#123;</span><br><span class="line">            count: 9 - that.data.uploaderNum, // 默认9</span><br><span class="line">            sizeType: [&apos;original&apos;, &apos;compressed&apos;], // 可以指定是原图还是压缩图，默认二者都有</span><br><span class="line">            sourceType: [&apos;album&apos;, &apos;camera&apos;], // 可以指定来源是相册还是相机，默认二者都有</span><br><span class="line">            success: function(res) &#123;</span><br><span class="line">                console.log(res)</span><br><span class="line">                // 返回选定照片的本地文件路径列表，tempFilePath可以作为img标签的src属性显示图片</span><br><span class="line">                let tempFilePaths = res.tempFilePaths;</span><br><span class="line">                let uploaderList = that.data.uploaderList.concat(tempFilePaths);</span><br><span class="line">                if (uploaderList.length==9)&#123;</span><br><span class="line">                    that.setData(&#123;</span><br><span class="line">                        showUpload:false</span><br><span class="line">                    &#125;)</span><br><span class="line">                &#125;</span><br><span class="line">                that.setData(&#123;</span><br><span class="line">                    uploaderList: uploaderList,</span><br><span class="line">                    uploaderNum: uploaderList.length,</span><br><span class="line">                &#125;)</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;)</span><br><span class="line">    &#125;,</span><br><span class="line">  &#125;)</span><br></pre></td></tr></table></figure>
+
+<h1 id="微信小程序单选多选功能"><a href="#微信小程序单选多选功能" class="headerlink" title="微信小程序单选多选功能"></a>微信小程序单选多选功能</h1><!-- more -->
+<p><img src="/images/radio.png" alt></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">&lt;!-- wxml --&gt;</span><br><span class="line">&lt;!-- 多选功能 --&gt;</span><br><span class="line">&lt;!--wxml--&gt;</span><br><span class="line">&lt;view class=&apos;wrap&apos;&gt;</span><br><span class="line">  &lt;view class=&apos;checkbox-con&apos;&gt;</span><br><span class="line">    &lt;checkbox-group bindchange=&quot;checkboxChange&quot;&gt;</span><br><span class="line">      &lt;label class=&quot;&#123;&#123;item.checked?&apos;checkbox checked&apos;:&apos;checkbox&apos;&#125;&#125;&quot; wx:for=&quot;&#123;&#123;checkboxArr&#125;&#125;&quot; bindtap=&apos;checkbox&apos; data-index=&quot;&#123;&#123;index&#125;&#125;&quot; wx:key=&quot;item.name&quot;&gt;</span><br><span class="line">        &lt;checkbox value=&quot;&#123;&#123;item.name&#125;&#125;&quot; checked=&quot;&#123;&#123;item.checked&#125;&#125;&quot;/&gt;&#123;&#123;item.name&#125;&#125;</span><br><span class="line">      &lt;/label&gt;</span><br><span class="line">    &lt;/checkbox-group&gt;</span><br><span class="line">     &lt;button type=&apos;primary&apos; bindtap=&apos;confirm&apos;&gt;提交&lt;/button&gt;</span><br><span class="line">  &lt;/view&gt;</span><br><span class="line">&lt;/view&gt;</span><br><span class="line">&lt;!-- 单选功能 --&gt;</span><br><span class="line">&lt;!--wxml--&gt;</span><br><span class="line">&lt;view class=&apos;wrap&apos;&gt;</span><br><span class="line">  &lt;view class=&apos;checkbox-con&apos;&gt;</span><br><span class="line">    &lt;radio-group bindchange=&quot;radioChange&quot;&gt;</span><br><span class="line">      &lt;label class=&quot;&#123;&#123;item.checked?&apos;checkbox checked&apos;:&apos;checkbox&apos;&#125;&#125;&quot; wx:for=&quot;&#123;&#123;checkboxArr&#125;&#125;&quot; bindtap=&apos;radio&apos; data-index=&quot;&#123;&#123;index&#125;&#125;&quot; wx:key=&quot;item.name&quot;&gt;</span><br><span class="line">        &lt;checkbox value=&quot;&#123;&#123;item.name&#125;&#125;&quot; checked=&quot;&#123;&#123;item.checked&#125;&#125;&quot;/&gt;&#123;&#123;item.name&#125;&#125;</span><br><span class="line">      &lt;/label&gt;</span><br><span class="line">    &lt;/radio-group&gt;</span><br><span class="line">     &lt;button type=&apos;primary&apos; bindtap=&apos;confirm&apos;&gt;提交&lt;/button&gt;</span><br><span class="line">  &lt;/view&gt;</span><br><span class="line">&lt;/view&gt;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line">&lt;!-- wxss --&gt;</span><br><span class="line">/* wxss */</span><br><span class="line">.wrap&#123;</span><br><span class="line">  width: 550rpx;</span><br><span class="line">  margin: 50rpx auto</span><br><span class="line">&#125;</span><br><span class="line"> </span><br><span class="line">.checkbox-con&#123;</span><br><span class="line">  margin-top: 40rpx;</span><br><span class="line">  text-align: center</span><br><span class="line">&#125;</span><br><span class="line">.checkbox&#123;</span><br><span class="line">  width: 260rpx;</span><br><span class="line">  height: 72rpx;</span><br><span class="line">  line-height: 72rpx;</span><br><span class="line">  font-size: 28rpx;</span><br><span class="line">  color: #888888;</span><br><span class="line">  border: 1rpx solid #CECECE;</span><br><span class="line">  border-radius: 5rpx;</span><br><span class="line">  display: inline-block;</span><br><span class="line">  margin: 0 10rpx 20rpx 0;</span><br><span class="line">  position: relative</span><br><span class="line">&#125;</span><br><span class="line">.checked&#123;</span><br><span class="line">  color: #1A92EC;</span><br><span class="line">  background: rgba(49,165,253,0.08);</span><br><span class="line">  border: 1rpx solid #31A5FD;</span><br><span class="line">&#125;</span><br><span class="line">.checkbox checkbox&#123;</span><br><span class="line">  display: none</span><br><span class="line">&#125;</span><br><span class="line">.checked-img&#123;</span><br><span class="line">  width: 28rpx;</span><br><span class="line">  height: 28rpx;</span><br><span class="line">  position: absolute;</span><br><span class="line">  top: 0;</span><br><span class="line">  right: 0</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br></pre></td><td class="code"><pre><span class="line">&lt;!-- js --&gt;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">Page(&#123;</span><br><span class="line">  data: &#123;</span><br><span class="line">    checkboxArr: [&#123;</span><br><span class="line">      name: &apos;选项A&apos;,</span><br><span class="line">      checked: false</span><br><span class="line">    &#125;, &#123;</span><br><span class="line">      name: &apos;选项B&apos;,</span><br><span class="line">      checked: false</span><br><span class="line">    &#125;, &#123;</span><br><span class="line">      name: &apos;选项C&apos;,</span><br><span class="line">      checked: false</span><br><span class="line">    &#125;, &#123;</span><br><span class="line">      name: &apos;选项D&apos;,</span><br><span class="line">      checked: false</span><br><span class="line">    &#125;, &#123;</span><br><span class="line">      name: &apos;选项E&apos;,</span><br><span class="line">      checked: false</span><br><span class="line">    &#125;, &#123;</span><br><span class="line">      name: &apos;选项F&apos;,</span><br><span class="line">      checked: false</span><br><span class="line">    &#125;],</span><br><span class="line">  &#125;,</span><br><span class="line">  // 单选功能</span><br><span class="line">  radio: function (e) &#123;</span><br><span class="line">    var index = e.currentTarget.dataset.index;//获取当前点击的下标</span><br><span class="line">    var checkboxArr = this.data.checkboxArr;//选项集合</span><br><span class="line">    if (checkboxArr[index].checked) return;//如果点击的当前已选中则返回</span><br><span class="line">    checkboxArr.forEach(item =&gt; &#123;</span><br><span class="line">      item.checked = false</span><br><span class="line">    &#125;)</span><br><span class="line">    checkboxArr[index].checked = true;//改变当前选中的checked值</span><br><span class="line">    this.setData(&#123;</span><br><span class="line">      checkboxArr: checkboxArr</span><br><span class="line">    &#125;);</span><br><span class="line">  &#125;,</span><br><span class="line">  radioChange: function (e) &#123;</span><br><span class="line">    var checkValue = e.detail.value;</span><br><span class="line">    this.setData(&#123;</span><br><span class="line">      checkValue: checkValue</span><br><span class="line">    &#125;);</span><br><span class="line">  &#125;,</span><br><span class="line">  confirm: function () &#123;// 提交</span><br><span class="line">    console.log(this.data.checkValue)//所有选中的项的value</span><br><span class="line">  &#125;,</span><br><span class="line">  // 多选功能</span><br><span class="line">  checkbox: function (e) &#123;</span><br><span class="line">    var index = e.currentTarget.dataset.index;//获取当前点击的下标</span><br><span class="line">    var checkboxArr = this.data.checkboxArr;//选项集合</span><br><span class="line">    checkboxArr[index].checked = !checkboxArr[index].checked;//改变当前选中的checked值</span><br><span class="line">    this.setData(&#123;</span><br><span class="line">      checkboxArr: checkboxArr</span><br><span class="line">    &#125;);</span><br><span class="line">  &#125;,</span><br><span class="line">  checkboxChange: function (e) &#123;</span><br><span class="line">    var checkValue = e.detail.value;</span><br><span class="line">    this.setData(&#123;</span><br><span class="line">      checkValue: checkValue</span><br><span class="line">    &#125;);</span><br><span class="line">  &#125;,</span><br><span class="line">  confirm: function () &#123;// 提交</span><br><span class="line">    console.log(this.data.checkValue)//所有选中的项的value</span><br><span class="line">  &#125;,</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+
+<h1 id="微信小程序自定义底部导航栏-中间一个凸起"><a href="#微信小程序自定义底部导航栏-中间一个凸起" class="headerlink" title="微信小程序自定义底部导航栏(中间一个凸起)"></a>微信小程序自定义底部导航栏(中间一个凸起)</h1><p><img src="/images/tabbar.png" alt></p>
+<!-- more -->
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line">&lt;!-- router.js --&gt;替代微信小程序自带的底部导航条</span><br><span class="line">module.exports = [</span><br><span class="line">  &#123;</span><br><span class="line">    &quot;pagePath&quot;: &quot;pages/body/body&quot;,</span><br><span class="line">    &quot;text&quot;: &quot;主页&quot;,</span><br><span class="line">    &quot;iconPath&quot;: &quot;/pages/images/home1.png&quot;,</span><br><span class="line">    &quot;selectedIconPath&quot;: &quot;/pages/images/home2.png&quot;,</span><br><span class="line">    &quot;auth&quot;: 0</span><br><span class="line">  &#125;,</span><br><span class="line">  &#123;</span><br><span class="line">    &quot;pagePath&quot;: &quot;pages/informmation/recruitment/recruitment&quot;,</span><br><span class="line">    &quot;text&quot;: &quot;信息中心&quot;,</span><br><span class="line">    &quot;iconPath&quot;: &quot;/pages/images/mes1.png&quot;,</span><br><span class="line">    &quot;selectedIconPath&quot;: &quot;/pages/images/mes2.png&quot;,</span><br><span class="line">    &quot;auth&quot;: 0</span><br><span class="line">  &#125;,</span><br><span class="line">  &#123;</span><br><span class="line">    &quot;pagePath&quot;: &quot;pages/index/index&quot;,</span><br><span class="line">    &quot;text&quot;: &quot; &quot;,</span><br><span class="line">    &quot;iconPath&quot;: &quot;/pages/images/add2.png&quot;,</span><br><span class="line">    &quot;selectedIconPath&quot;: &quot;/pages/images/add2.png&quot;,</span><br><span class="line">    &quot;auth&quot;: 0</span><br><span class="line">  &#125;,</span><br><span class="line">  &#123;</span><br><span class="line">    &quot;pagePath&quot;: &quot;pages/store/index/index&quot;,</span><br><span class="line">    &quot;text&quot;: &quot;商城&quot;,</span><br><span class="line">    &quot;iconPath&quot;: &quot;/pages/images/store1.png&quot;,</span><br><span class="line">    &quot;selectedIconPath&quot;: &quot;/pages/images/store2.png&quot;,</span><br><span class="line">    &quot;auth&quot;: 0</span><br><span class="line">  &#125;,</span><br><span class="line">  &#123;</span><br><span class="line">    &quot;pagePath&quot;: &quot;pages/self/index/index&quot;,</span><br><span class="line">    &quot;text&quot;: &quot;会员中心&quot;,</span><br><span class="line">    &quot;iconPath&quot;: &quot;/pages/images/self1.png&quot;,</span><br><span class="line">    &quot;selectedIconPath&quot;: &quot;/pages/images/self2.png&quot;,</span><br><span class="line">    &quot;auth&quot;: 0</span><br><span class="line">  &#125;,</span><br><span class="line">]</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">&lt;!-- tabbar.wxml --&gt;</span><br><span class="line">&lt;!-- 底部导航条 --&gt;</span><br><span class="line">&lt;view class=&apos;tabbar&apos;&gt;</span><br><span class="line">  &lt;view wx:if=&apos;&#123;&#123;_auth &gt;= item.auth&#125;&#125;&apos; class=&apos;tabbar-item&apos; wx:for=&apos;&#123;&#123;tabbarList&#125;&#125;&apos; wx:key=&apos;&#123;&#123;item.pagePath&#125;&#125;&apos; bindtap=&apos;handleItemTap&apos; data-path=&apos;&#123;&#123;item.pagePath&#125;&#125;&apos; data-idx=&apos;&#123;&#123;index&#125;&#125;&apos;&gt;</span><br><span class="line">    &lt;view class=&apos;tabbar-item-icon&apos;&gt;</span><br><span class="line">      &lt;image src=&apos;&#123;&#123;activeIdx === index ? item.selectedIconPath : item.iconPath&#125;&#125;&apos;&gt;&lt;/image&gt;</span><br><span class="line">    &lt;/view&gt;</span><br><span class="line">    &lt;view class=&apos;tabbar-item-text &#123;&#123;activeIdx === index ? &quot;active&quot; : &quot;&quot;&#125;&#125;&apos;&gt;&#123;&#123;item.text&#125;&#125;&lt;/view&gt;</span><br><span class="line">  &lt;/view&gt;</span><br><span class="line">&lt;/view&gt;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br></pre></td><td class="code"><pre><span class="line">&lt;!-- tabbar.wxss --&gt;</span><br><span class="line">/* pages/tab/tab.wxss */</span><br><span class="line">.tabbar &#123;</span><br><span class="line">  z-index:99999;</span><br><span class="line">  position: fixed;</span><br><span class="line">  bottom: 0;</span><br><span class="line">  left: 0;</span><br><span class="line">  right: 0;</span><br><span class="line">  height: 100rpx;</span><br><span class="line">  border-top: 0.5px solid #d5d5d5;</span><br><span class="line">  display: flex;</span><br><span class="line">  font-size: 0;</span><br><span class="line">  background: #fff;</span><br><span class="line">&#125;</span><br><span class="line">.tabbar-item &#123;</span><br><span class="line">  flex: 1;</span><br><span class="line">  text-align: center;</span><br><span class="line">  overflow: hidden;</span><br><span class="line">  box-sizing: border-box;</span><br><span class="line">  padding: 8rpx 10rpx 0;</span><br><span class="line">  color: #333333;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">.tabbar-item:nth-child(3)&#123;</span><br><span class="line">  position: relative;</span><br><span class="line">  bottom: 50rpx;</span><br><span class="line">  height:150rpx;</span><br><span class="line">  flex: 0.7;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">.tabbar-item:nth-child(3) .tabbar-item-icon&#123;</span><br><span class="line">  height: 100rpx;</span><br><span class="line">  background: #fff;</span><br><span class="line">  border-radius: 50%;</span><br><span class="line">  border-top: solid 1px gray;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">.tabbar-item:nth-child(3) .tabbar-item-icon image&#123;</span><br><span class="line">  width: 90rpx;</span><br><span class="line">  height: 90rpx;</span><br><span class="line">  padding-top: 0rpx;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">.tabbar-item:nth-child(3) .tabbar-item-text&#123;</span><br><span class="line">  line-height: 0;</span><br><span class="line">  font-size: 28rpx;</span><br><span class="line">  margin-top: 8px;</span><br><span class="line">  color: #808080;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">.tabbar-item-icon &#123;</span><br><span class="line">  margin-bottom: 6rpx;</span><br><span class="line">  height: 56rpx;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">.tabbar-item-icon image &#123;</span><br><span class="line">  width: 56rpx;</span><br><span class="line">  height: 56rpx;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">.tabbar-item-text &#123;</span><br><span class="line">  font-size: 28rpx;</span><br><span class="line">  line-height: 20rpx;</span><br><span class="line">  color: #808080;</span><br><span class="line">&#125;</span><br><span class="line">.active &#123;</span><br><span class="line">  color: rgba(118,212,198,1);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br></pre></td><td class="code"><pre><span class="line">&lt;!-- tabbar.js --&gt;</span><br><span class="line">// pages/tab/tab.js</span><br><span class="line">import tabbarList from &quot;../../utils/router.js&quot;//根据刚才创建的router.js引入即可</span><br><span class="line">Component(&#123;</span><br><span class="line"></span><br><span class="line">  /**</span><br><span class="line">   * 组件的属性列表</span><br><span class="line">   */</span><br><span class="line">  properties: &#123;</span><br><span class="line">    activeIdx: &#123;</span><br><span class="line">      type: Number,</span><br><span class="line">      value: 0</span><br><span class="line">    &#125;,</span><br><span class="line">    auth: &#123;</span><br><span class="line">      type: Number,</span><br><span class="line">      value: 0,</span><br><span class="line">      observer: &apos;onAuthChanged&apos;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;,</span><br><span class="line"></span><br><span class="line">  /**</span><br><span class="line">   * 组件的初始数据</span><br><span class="line">   */</span><br><span class="line">  data: &#123;</span><br><span class="line">    tabbarList: tabbarList,</span><br><span class="line">    _auth: 0</span><br><span class="line">  &#125;,</span><br><span class="line"></span><br><span class="line">  /**</span><br><span class="line">   * 组件的方法列表</span><br><span class="line">   */</span><br><span class="line">  methods: &#123;</span><br><span class="line">    handleItemTap(e) &#123;</span><br><span class="line">      const &#123;</span><br><span class="line">        idx,</span><br><span class="line">        path</span><br><span class="line">      &#125; = e.currentTarget.dataset</span><br><span class="line"></span><br><span class="line">      if (idx === this.data.activeIdx) &#123;</span><br><span class="line">        this.trigger(&apos;refresh&apos;)</span><br><span class="line">        return</span><br><span class="line">      &#125;</span><br><span class="line">      wx.switchTab(&#123;</span><br><span class="line">        url: `/$&#123;path&#125;`,</span><br><span class="line">      &#125;)</span><br><span class="line">    &#125;,</span><br><span class="line">    onAuthChanged(newVal) &#123;</span><br><span class="line">      wx.setStorageSync(&apos;__com-tabbar-auth&apos;, newVal)</span><br><span class="line">      this.setData(&#123;</span><br><span class="line">        _auth: newVal</span><br><span class="line">      &#125;)</span><br><span class="line">    &#125;,</span><br><span class="line">    trigger(eventName, value = &#123;&#125;, info) &#123;</span><br><span class="line">      if (!eventName) &#123;</span><br><span class="line">        throw new TypeError(&apos;没有自定义事件名&apos;)</span><br><span class="line">      &#125;</span><br><span class="line">      this.triggerEvent(eventName, value)</span><br><span class="line">      console.log(`发送 $&#123;eventName&#125; 事件,携带的值为 $&#123;typeof value === &apos;object&apos; ? JSON.stringify(value) : value&#125; $&#123;info ? &apos;   ---   &apos; + info : &apos;&apos;&#125;`)</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;,</span><br><span class="line">  ready() &#123; &#125;,</span><br><span class="line">  /** 权限显示 */</span><br><span class="line">  pageLifetimes: &#123;</span><br><span class="line">    show: function () &#123;</span><br><span class="line">      console.log(&apos;show&apos;)</span><br><span class="line">      this.setData(&#123;</span><br><span class="line">        _auth: wx.getStorageSync(&apos;__com-tabbar-auth&apos;)</span><br><span class="line">      &#125;)</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+
+<p>tabbar组件创建完成 直接在需要显示底部导航条的页面引入即可<br>el:在index中引入底部导航条<br>1.在index.json中”usingComponents”: {“tabbar”: “/pages/tabbar/tabbar”}//位置是刚才的tabbar.wxml位置<br>2.在index.wxml中最后(位置不限)添加<tabbar activeidx></tabbar><br>3.！！！在index.js data中添加 activeIdx: 0{根据下标选择(el:index是首页就是0，body是信息中心就是1…)},</p>
+<h1 id="微信小程序选项卡功能"><a href="#微信小程序选项卡功能" class="headerlink" title="微信小程序选项卡功能"></a>微信小程序选项卡功能</h1><iframe width="500" height="700" src="/images/tab.gif"></iframe>
+<!-- more -->
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">&lt;!-- wxml --&gt;</span><br><span class="line">&lt;!-- 上方选项卡 --&gt;</span><br><span class="line">&lt;view class=&apos;topTabSwiper&apos;&gt;</span><br><span class="line">    &lt;view class=&apos;tab  &#123;&#123;currentData == 0 ? &quot;tabBorer&quot; : &quot;&quot;&#125;&#125;&apos;  data-current = &quot;0&quot; bindtap=&apos;checkCurrent&apos;&gt;推荐&lt;/view&gt;</span><br><span class="line">    &lt;view class=&apos;tab  &#123;&#123;currentData == 1 ? &quot;tabBorer&quot; : &quot;&quot;&#125;&#125;&apos;  data-current = &quot;1&quot; bindtap=&apos;checkCurrent&apos;&gt;热点&lt;/view&gt;</span><br><span class="line">    &lt;view class=&apos;tab  &#123;&#123;currentData == 2 ? &quot;tabBorer&quot; : &quot;&quot;&#125;&#125;&apos;  data-current = &quot;2&quot; bindtap=&apos;checkCurrent&apos;&gt;关注&lt;/view&gt; </span><br><span class="line">&lt;/view&gt;</span><br><span class="line">&lt;!-- 下方选项卡所对应内容 --&gt;</span><br><span class="line">&lt;swiper current=&quot;&#123;&#123;currentData&#125;&#125;&quot; class=&apos;swiper&apos; style=&quot;height:600px;&quot; duration=&quot;300&quot; bindchange=&quot;bindchange&quot;&gt;</span><br><span class="line">  &lt;swiper-item&gt;&lt;view class=&apos;swiper_con&apos;&gt;内容1&lt;/view&gt;&lt;/swiper-item&gt; </span><br><span class="line">  &lt;swiper-item&gt;&lt;view class=&apos;swiper_con&apos;&gt;内容2&lt;/view&gt;&lt;/swiper-item&gt;</span><br><span class="line">  &lt;swiper-item&gt;&lt;view class=&apos;swiper_con&apos;&gt;内容3&lt;/view&gt;&lt;/swiper-item&gt;  </span><br><span class="line">&lt;/swiper&gt;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&lt;!-- wxss --&gt;</span><br><span class="line">.tab&#123;float: left; width: 33.3333%;text-align: center;padding: 10rpx 0; &#125;</span><br><span class="line">.topTabSwiper&#123;  zoom: 1;&#125;</span><br><span class="line">.topTabSwiper:after&#123;content: &quot;&quot;; clear: both;display: block;&#125;</span><br><span class="line">.tabBorer&#123;border-bottom: 1px solid #f00; color: #f00;&#125;</span><br><span class="line">.swiper&#123;width: 100%;&#125;</span><br><span class="line">.swiper_con&#123;text-align: center; width: 100%; height: 100%; padding: 80rpx 0;&#125;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">&lt;!-- js --&gt;</span><br><span class="line">//点击切换，滑块index赋值</span><br><span class="line">  checkCurrent: function (e) &#123;</span><br><span class="line">    const that = this;</span><br><span class="line"></span><br><span class="line">    if (that.data.currentData === e.target.dataset.current) &#123;</span><br><span class="line">      return false;</span><br><span class="line">    &#125; else &#123;</span><br><span class="line"></span><br><span class="line">      that.setData(&#123;</span><br><span class="line">        currentData: e.target.dataset.current</span><br><span class="line">      &#125;)</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;,</span><br><span class="line">    //获取当前滑块的index</span><br><span class="line">  bindchange: function (e) &#123;</span><br><span class="line">    const that = this;</span><br><span class="line">    that.setData(&#123;</span><br><span class="line">      currentData: e.detail.current</span><br><span class="line">    &#125;)</span><br><span class="line">  &#125;,</span><br><span class="line">  data:&#123;</span><br><span class="line">    // 选项卡显示第一页</span><br><span class="line">    currentData: 0,&#125;</span><br></pre></td></tr></table></figure>
+      
+    </div>
+    
+    
+    
+
+<div>
+      
+        
+<div class="my_post_copyright">
+  <script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
+  
+  <!-- JS库 sweetalert 可修改路径 -->
+  <script src="https://cdn.bootcss.com/jquery/2.0.0/jquery.min.js"></script>
+  <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+  <p><span>本文标题:</span><a href="/2019/09/28/微信小程序相关功功能/">微信小程序相关功功能</a></p>
+  <p><span>文章作者:</span><a href="/" title="访问 七月 的个人博客">七月</a></p>
+  <p><span>发布时间:</span>2019年09月28日 - 21:09</p>
+  <p><span>最后更新:</span>2019年10月06日 - 13:10</p>
+  <p><span>原始链接:</span><a href="/2019/09/28/微信小程序相关功功能/" title="微信小程序相关功功能">http://yuqiqi.com/2019/09/28/微信小程序相关功功能/</a>
+    <span class="copy-path" title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="http://yuqiqi.com/2019/09/28/微信小程序相关功功能/" aria-label="复制成功！"></i></span>
+  </p>
+  <p><span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank" title="Attribution-NonCommercial-NoDerivatives 4.0 International (CC BY-NC-ND 4.0)">署名-非商业性使用-禁止演绎 4.0 国际</a> 转载请保留原文链接及作者。</p>  
+</div>
+<script> 
+    var clipboard = new Clipboard('.fa-clipboard');
+    $(".fa-clipboard").click(function(){
+      clipboard.on('success', function(){
+        swal({   
+          title: "",   
+          text: '复制成功',
+          icon: "success", 
+          showConfirmButton: true
+          });
+    });
+    });  
+</script>
+
+      
+</div>
+
+    
+
+    
+      <div>
+        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+  <div>坚持原创技术分享，您的支持将鼓励我继续创作！</div>
+  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+    <span>打赏</span>
+  </button>
+  <div id="QR" style="display: none;">
+
+    
+
+    
+      <div id="alipay" style="display: inline-block">
+        <img id="alipay_qr" src="/images/alipay.jpg" alt="七月 支付宝">
+        <p>支付宝</p>
+      </div>
+    
+
+    
+
+  </div>
+</div>
+
+      </div>
+    
+
+    
+      <div>
+        
+           <div>
+    
+        <div style="text-align:center;color: #ccc;font-size:14px;">-------------本文结束❤感谢您的阅读-------------</div>
+    
+</div>
+        
+      </div>
+    <footer class="post-footer">
+      
+
+      
+      
+        <div class="post-widgets">
+        
+          <div class="wp_rating">
+            <div id="wpac-rating"></div>
+          </div>
+        
+
+        
+
+        
+        </div>
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/09/26/测试/" rel="next" title="markdown基础语法">
+                <i class="fa fa-chevron-left"></i> markdown基础语法
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+    
+        <!--MOB SHARE BEGIN-->
+<div class="-hoofoo-share-title">分享到: </div>
+<div class="-hoofoo-share-buttons">
+    <div class="-mob-share-weibo -hoofoo-share-weibo -hoofoo-share-ui-button"><i class="fa fa-weibo" aria-hidden="true"></i></div>
+    <div class="-mob-share-weixin -hoofoo-share-weixin -hoofoo-share-ui-button"><i class="fa fa-weixin" aria-hidden="true"></i></div>
+    <div class="-mob-share-qq -hoofoo-share-qq -hoofoo-share-ui-button"><i class="fa fa-qq" aria-hidden="true"></i></div>
+    <div class="-mob-share-twitter -hoofoo-share-twitter -hoofoo-share-ui-button"><i class="fa fa-twitter" aria-hidden="true"></i></div>
+    <div class="-hoofoo-share-more -hoofoo-share-ui-button -mob-share-open"><i class="fa fa-ellipsis-h" aria-hidden="true"></i></div>
+</div>
+<div class="-mob-share-ui" style="display: none">
+    <ul class="-mob-share-list">
+        <li class="-mob-share-weibo"><p>新浪微博</p></li>
+        <li class="-mob-share-weixin"><p>微信</p></li>
+        <li class="-mob-share-qzone"><p>QQ空间</p></li>
+        <li class="-mob-share-qq"><p>QQ好友</p></li>
+        <li class="-mob-share-tencentweibo"><p>腾讯微博</p></li>
+        <li class="-mob-share-renren"><p>人人网</p></li>
+        <li class="-mob-share-kaixin"><p>开心网</p></li>
+        <li class="-mob-share-douban"><p>豆瓣</p></li>
+        <li class="-mob-share-youdao"><p>有道云笔记</p></li>
+        <li class="-mob-share-mingdao"><p>明道</p></li>
+        <li class="-mob-share-pengyou"><p>朋友网</p></li>
+        <li class="-mob-share-facebook"><p>Facebook</p></li>
+        <li class="-mob-share-twitter"><p>Twitter</p></li>
+        <li class="-mob-share-pocket"><p>Pocket</p></li>
+        <li class="-mob-share-google"><p>Google+</p></li>
+        <li class="-mob-share-tumblr"><p>Tumblr</p></li>
+        <li class="-mob-share-instapaper"><p>Instapaper</p></li>
+        <li class="-mob-share-linkedin"><p>Linkedin</p></li>
+    </ul>
+    <div class="-mob-share-close">取消</div>
+</div>
+<div class="-mob-share-ui-bg"></div>
+<script id="-mob-share" src="http://f1.webshare.mob.com/code/mob-share.js?appkey=2c8d140a433dc"></script>
+<!--MOB SHARE END-->
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+    <div class="comments" id="comments">
+      <div id="lv-container" data-id="city" data-uid="MTAyMC80Njc2MC8yMzI2Mg=="></div>
+    </div>
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image" src="/images/favicon.jpg" alt="七月">
+            
+              <p class="site-author-name" itemprop="name">七月</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">6</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">1</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                
+                  <span class="site-state-item-count">4</span>
+                  <span class="site-state-item-name">标签</span>
+                
+              </div>
+            
+
+          </nav>
+
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/yueqiqi" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+
+          
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#微信小程序三级联动省市区选择器"><span class="nav-number">1.</span> <span class="nav-text">微信小程序三级联动省市区选择器</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#微信小程序上传图片功能"><span class="nav-number">2.</span> <span class="nav-text">微信小程序上传图片功能</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#不带上传到后台的功能"><span class="nav-number">2.1.</span> <span class="nav-text">不带上传到后台的功能</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#微信小程序单选多选功能"><span class="nav-number">3.</span> <span class="nav-text">微信小程序单选多选功能</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#微信小程序自定义底部导航栏-中间一个凸起"><span class="nav-number">4.</span> <span class="nav-text">微信小程序自定义底部导航栏(中间一个凸起)</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#微信小程序选项卡功能"><span class="nav-number">5.</span> <span class="nav-text">微信小程序选项卡功能</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+        <div class="back-to-top">
+          <i class="fa fa-arrow-up"></i>
+          
+            <span id="scrollpercent"><span>0</span>%</span>
+          
+        </div>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love" id="heart">
+    <i class="fa fa-">❤</i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">七月</span>
+
+  
+</div>
+
+
+  <div class="powered-by">  个人专属</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">博客-yueqiqi.top</div>
+
+
+
+
+        
+<div class="busuanzi-count">
+  <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv">
+      <i class="fa fa-user"></i> 本站访客数
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+      次
+    </span>
+  
+
+  
+    <span class="site-pv">
+      <i class="fa fa-eye"></i> 本站总访问量
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+      次
+    </span>
+  
+</div>
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+
+    
+
+  </div>
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+    <script type="text/javascript">
+      (function(d, s) {
+        var j, e = d.getElementsByTagName(s)[0];
+        if (typeof LivereTower === 'function') { return; }
+        j = d.createElement(s);
+        j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+        j.async = true;
+        e.parentNode.insertBefore(j, e);
+      })(document, 'script');
+    </script>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.4.js"></script>
+  <script>AV.initialize("idlrwL6afE2VzlM30JkViq3N-gzGzoHsz", "GeWe9d9AQeuFuzK3DL1sdcFS");</script>
+  <script>
+    function showTime(Counter) {
+      var query = new AV.Query(Counter);
+      var entries = [];
+      var $visitors = $(".leancloud_visitors");
+
+      $visitors.each(function () {
+        entries.push( $(this).attr("id").trim() );
+      });
+
+      query.containedIn('url', entries);
+      query.find()
+        .done(function (results) {
+          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
+
+          if (results.length === 0) {
+            $visitors.find(COUNT_CONTAINER_REF).text(0);
+            return;
+          }
+
+          for (var i = 0; i < results.length; i++) {
+            var item = results[i];
+            var url = item.get('url');
+            var time = item.get('time');
+            var element = document.getElementById(url);
+
+            $(element).find(COUNT_CONTAINER_REF).text(time);
+          }
+          for(var i = 0; i < entries.length; i++) {
+            var url = entries[i];
+            var element = document.getElementById(url);
+            var countSpan = $(element).find(COUNT_CONTAINER_REF);
+            if( countSpan.text() == '') {
+              countSpan.text(0);
+            }
+          }
+        })
+        .fail(function (object, error) {
+          console.log("Error: " + error.code + " " + error.message);
+        });
+    }
+
+    function addCount(Counter) {
+      var $visitors = $(".leancloud_visitors");
+      var url = $visitors.attr('id').trim();
+      var title = $visitors.attr('data-flag-title').trim();
+      var query = new AV.Query(Counter);
+
+      query.equalTo("url", url);
+      query.find({
+        success: function(results) {
+          if (results.length > 0) {
+            var counter = results[0];
+            counter.fetchWhenSave(true);
+            counter.increment("time");
+            counter.save(null, {
+              success: function(counter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(counter.get('time'));
+              },
+              error: function(counter, error) {
+                console.log('Failed to save Visitor num, with error message: ' + error.message);
+              }
+            });
+          } else {
+            var newcounter = new Counter();
+            /* Set ACL */
+            var acl = new AV.ACL();
+            acl.setPublicReadAccess(true);
+            acl.setPublicWriteAccess(true);
+            newcounter.setACL(acl);
+            /* End Set ACL */
+            newcounter.set("title", title);
+            newcounter.set("url", url);
+            newcounter.set("time", 1);
+            newcounter.save(null, {
+              success: function(newcounter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
+              },
+              error: function(newcounter, error) {
+                console.log('Failed to create');
+              }
+            });
+          }
+        },
+        error: function(error) {
+          console.log('Error:' + error.code + " " + error.message);
+        }
+      });
+    }
+
+    $(function() {
+      var Counter = AV.Object.extend("Counter");
+      if ($('.leancloud_visitors').length == 1) {
+        addCount(Counter);
+      } else if ($('.post-title-link').length > 1) {
+        showTime(Counter);
+      }
+    });
+  </script>
+
+
+
+  
+
+  
+
+  
+  
+  <script type="text/javascript">
+  wpac_init = window.wpac_init || [];
+  wpac_init.push({widget: 'Rating', id: ,
+    el: 'wpac-rating',
+    color: 'fc6423'
+  });
+  (function() {
+    if ('WIDGETPACK_LOADED' in window) return;
+    WIDGETPACK_LOADED = true;
+    var mc = document.createElement('script');
+    mc.type = 'text/javascript';
+    mc.async = true;
+    mc.src = '//embed.widgetpack.com/widget.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(mc, s.nextSibling);
+  })();
+  </script>
+
+
+  
+
+  
+
+  
+
+  
+<script type="text/javascript">
+    $('body').delegate('.-mob-share-weixin-qrcode-bg','click', function(){
+         $(".-mob-share-weixin-qrcode-close").trigger("click");
+    }); 
+</script>
+
+
+ <script type="text/javascript" src="/js/src/dytitle.js"></script>
+ <!-- 页面点击小红心 -->
+<script type="text/javascript" src="/js/src/clicklove.js"></script>
+<div>
+<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="530" height="86" auto="1" src="//music.163.com/outchain/player?type=2&id=1361361877&auto=1&height=66"></iframe>
+</div>
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"log":false,"pluginJsPath":"lib/","pluginModelPath":"assets/","pluginRootPath":"live2dw/","tagMode":false});</script></body>
+</html>

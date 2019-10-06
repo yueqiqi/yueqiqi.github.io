@@ -74,24 +74,23 @@
 
 
 
+  <link rel="alternate" href="/atom.xml" title="七月先森的独立博客" type="application/atom+xml">
 
 
 
 
 
-<meta name="description" content="123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051&amp;lt;view class=&amp;quot;weui-search-bar&amp;quot;&amp;gt;   &amp;lt;view class=&amp;quot;weui-search-bar__form&amp;quot;&amp;gt;    &amp;">
+
 <meta property="og:type" content="article">
 <meta property="og:title" content="微信小程序搜索功能">
 <meta property="og:url" content="http://yuqiqi.com/2019/09/25/微信小程序搜索功能/index.html">
 <meta property="og:site_name" content="七月先森的独立博客">
-<meta property="og:description" content="123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051&amp;lt;view class=&amp;quot;weui-search-bar&amp;quot;&amp;gt;   &amp;lt;view class=&amp;quot;weui-search-bar__form&amp;quot;&amp;gt;    &amp;">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="http://yuqiqi.com/images/search.png">
 <meta property="og:image" content="http://yuqiqi.com/images/s2.png">
-<meta property="og:updated_time" content="2019-09-24T16:06:27.991Z">
+<meta property="og:updated_time" content="2019-10-06T05:27:21.023Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="微信小程序搜索功能">
-<meta name="twitter:description" content="123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051&amp;lt;view class=&amp;quot;weui-search-bar&amp;quot;&amp;gt;   &amp;lt;view class=&amp;quot;weui-search-bar__form&amp;quot;&amp;gt;    &amp;">
 <meta name="twitter:image" content="http://yuqiqi.com/images/search.png">
 
 
@@ -427,6 +426,7 @@
 
       
         <p><img src="/images/search.png" alt><img src="/images/s2.png" alt></p>
+<a id="more"></a>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br></pre></td><td class="code"><pre><span class="line">&lt;view class=&quot;weui-search-bar&quot;&gt;</span><br><span class="line">   &lt;view class=&quot;weui-search-bar__form&quot;&gt;</span><br><span class="line">    &lt;view class=&quot;weui-search-bar__box&quot;&gt;</span><br><span class="line">      &lt;icon class=&quot;weui-icon-search_in-box&quot; type=&quot;search&quot; size=&quot;14&quot;&gt;&lt;/icon&gt;</span><br><span class="line">      &lt;input type=&quot;text&quot; class=&quot;weui-search-bar__input&quot; placeholder=&quot;搜索...&quot; value=&quot;&#123;&#123;wxSearchData.value&#125;&#125;&quot; bindinput=&quot;wxSearchInput&quot; bindconfirm=&quot;wxSearchConfirm&quot; /&gt;</span><br><span class="line">      &lt;view class=&quot;weui-icon-clear&quot; wx:if=&quot;&#123;&#123;wxSearchData.value.length &gt; 0&#125;&#125;&quot; bindtap=&quot;wxSearchClear&quot;&gt;</span><br><span class="line">        &lt;icon type=&quot;clear&quot; size=&quot;14&quot;&gt;&lt;/icon&gt;</span><br><span class="line">      &lt;/view&gt;</span><br><span class="line">    &lt;/view&gt;</span><br><span class="line">  &lt;/view&gt;</span><br><span class="line">    &lt;view class=&quot;weui-search-bar__cancel-btn&quot; bindtap=&quot;wxSearchConfirm&quot;&gt;</span><br><span class="line">         &lt;text wx:if=&quot;&#123;&#123;wxSearchData.value.length&gt;0&#125;&#125;&quot; data-key=&apos;search&apos;&gt;搜索&lt;/text&gt;</span><br><span class="line">         &lt;text wx:else data-key=&apos;back&apos;&gt;取消&lt;/text&gt;</span><br><span class="line">     &lt;/view&gt;</span><br><span class="line">&lt;/view&gt;</span><br><span class="line"></span><br><span class="line">&lt;view class=&quot;wxSearch&quot; style=&quot;&apos;block&apos;;height:&#123;&#123;wxSearchData.view.seachHeight&#125;&#125;px;top:&#123;&#123;wxSearchData.view.barHeight&#125;&#125;px;&quot;&gt;</span><br><span class="line"></span><br><span class="line">  &lt;view class=&quot;wxSearchInner&quot;&gt;</span><br><span class="line">    &lt;!-- 搜索提示部分 --&gt;</span><br><span class="line">    &lt;view class=&quot;wxSearchMindKey&quot;&gt;</span><br><span class="line">      &lt;view class=&quot;wxSearchMindKeyList&quot;&gt;</span><br><span class="line">        &lt;block wx:for=&quot;&#123;&#123;wxSearchData.tipKeys&#125;&#125;&quot; wx:key=&quot;&#123;&#123;index&#125;&#125;&quot;&gt;  </span><br><span class="line">          &lt;view class=&quot;wxSearchMindKeyItem&quot; bindtap=&quot;wxSearchKeyTap&quot; data-key=&quot;&#123;&#123;item&#125;&#125;&quot;&gt;&#123;&#123;item&#125;&#125;&lt;/view&gt;</span><br><span class="line">        &lt;/block&gt;</span><br><span class="line">      &lt;/view&gt;</span><br><span class="line">    &lt;/view&gt;</span><br><span class="line"></span><br><span class="line">    &lt;view wx:if=&quot;&#123;&#123;wxSearchData.his[0]&#125;&#125;&quot; class=&quot;wxSearchHistory&quot; style=&quot;display:&#123;&#123;wxSearchData.value.length&gt;0 ? &apos;none&apos;:&apos;block&apos;&#125;&#125;&quot;&gt;</span><br><span class="line">      &lt;view class=&quot;wxSearchHistoryItem&quot;&gt;</span><br><span class="line">        &lt;text class=&quot;wxSearchHistoryItemTitle&quot;&gt;搜索记录&lt;/text&gt;</span><br><span class="line">        &lt;!--text class=&quot;wxSearchHistoryItemDel&quot; bindtap=&quot;wxSearchDeleteAll&quot;&gt;删除&lt;/text--&gt;</span><br><span class="line">        &lt;icon type=&quot;clear&quot; bindtap=&quot;wxSearchDeleteAll&quot; size=&quot;18&quot; /&gt;</span><br><span class="line">      &lt;/view&gt;</span><br><span class="line">      &lt;view class=&quot;wxSearchKeyList&quot;&gt;</span><br><span class="line">        &lt;block wx:for=&quot;&#123;&#123;wxSearchData.his&#125;&#125;&quot; wx:key=&quot;&#123;&#123;index&#125;&#125;&quot;&gt;</span><br><span class="line">          &lt;view class=&quot;wxSearchKeyItem&quot; bindtap=&quot;wxSearchKeyTap&quot; data-key=&quot;&#123;&#123;item&#125;&#125;&quot;&gt;&#123;&#123;item&#125;&#125;&lt;/view&gt;</span><br><span class="line">        &lt;/block&gt;</span><br><span class="line">      &lt;/view&gt;</span><br><span class="line">    &lt;/view&gt;</span><br><span class="line"></span><br><span class="line">    &lt;view class=&quot;wxSearchKey&quot; style=&quot;display:&#123;&#123;wxSearchData.value.length&gt;0 ? &apos;none&apos;:&apos;block&apos;&#125;&#125;&quot;&gt;</span><br><span class="line">      &lt;text wx:if=&quot;&#123;&#123;wxSearchData.hotKeys[0]&#125;&#125;&quot; class=&quot;wxSearchTitle&quot;&gt;搜索热点&lt;/text&gt;</span><br><span class="line">      &lt;view class=&quot;wxSearchKeyList&quot;&gt;</span><br><span class="line">        &lt;block wx:for=&quot;&#123;&#123;wxSearchData.hotKeys&#125;&#125;&quot; wx:key=&quot;&#123;&#123;index&#125;&#125;&quot;&gt;</span><br><span class="line">          &lt;view class=&quot;wxSearchKeyItem&quot; bindtap=&quot;wxSearchKeyTap&quot; data-key=&quot;&#123;&#123;item&#125;&#125;&quot;&gt;&#123;&#123;item&#125;&#125;&lt;/view&gt;</span><br><span class="line">        &lt;/block&gt;</span><br><span class="line">      &lt;/view&gt;</span><br><span class="line">    &lt;/view&gt;</span><br><span class="line">  &lt;/view&gt;</span><br><span class="line">&lt;/view&gt;</span><br></pre></td></tr></table></figure>
 
 <p>搜索提示部分如图二 相当于联想词</p>
@@ -454,7 +454,7 @@
   <p><span>本文标题:</span><a href="/2019/09/25/微信小程序搜索功能/">微信小程序搜索功能</a></p>
   <p><span>文章作者:</span><a href="/" title="访问 七月 的个人博客">七月</a></p>
   <p><span>发布时间:</span>2019年09月25日 - 00:09</p>
-  <p><span>最后更新:</span>2019年09月25日 - 00:09</p>
+  <p><span>最后更新:</span>2019年10月06日 - 13:10</p>
   <p><span>原始链接:</span><a href="/2019/09/25/微信小程序搜索功能/" title="微信小程序搜索功能">http://yuqiqi.com/2019/09/25/微信小程序搜索功能/</a>
     <span class="copy-path" title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="http://yuqiqi.com/2019/09/25/微信小程序搜索功能/" aria-label="复制成功！"></i></span>
   </p>
@@ -547,6 +547,10 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/09/26/测试/" rel="prev" title="markdown基础语法">
+                markdown基础语法 <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -658,7 +662,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">4</span>
+                  <span class="site-state-item-count">6</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -688,6 +692,13 @@
 
           </nav>
 
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
           
 
           
@@ -734,7 +745,7 @@
     <footer id="footer" class="footer">
       <div class="footer-inner">
         <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
-  <span class="with-love">
+  <span class="with-love" id="heart">
     <i class="fa fa-">❤</i>
   </span>
   <span class="author" itemprop="copyrightHolder">七月</span>
