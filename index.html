@@ -593,132 +593,14 @@
 
       
         
-          
-            <p>分段 两个回车<br>换行 两个空格 + 回车<br>标题 # ~ ######，#号的个数表示几级标题，即表示一级标题到六级标题<br>强调 <strong>文字</strong> ， <strong>文字</strong> ， <em>文字</em> ， <em>文字</em> ， 文字<br>引用 &gt; 注意后面紧跟个空格<br>表格 - 和 | 分割行和列 ， : 控制对其方式<br>代码块 四个空格 开头或， 使用<br>链接 <a href="链接地址">文字</a><br>图片 <img src="/.com//%E5%9B%BE%E7%89%87%E5%9C%B0%E5%9D%80" alt="图片说明"> ，地址可以是本地路劲，也可以是网络地址<br>列表 * ， + ， - ， 1. ，选其中之一，注意后面紧跟个空格</p>
-<p>标题</p>
-<h1 id="欢迎使用Markdown编辑器写博客-一级标题-对应"><a href="#欢迎使用Markdown编辑器写博客-一级标题-对应" class="headerlink" title="欢迎使用Markdown编辑器写博客    //一级标题 对应  "></a>欢迎使用Markdown编辑器写博客    //一级标题 对应 <h1> </h1></h1><h2 id="标题输入-二级标题-对应"><a href="#标题输入-二级标题-对应" class="headerlink" title="标题输入                     //二级标题 对应  "></a>标题输入                     //二级标题 对应 <h2> </h2></h2><h3 id="三级标题-三级标题-对应"><a href="#三级标题-三级标题-对应" class="headerlink" title="三级标题                    //三级标题 对应  "></a>三级标题                    //三级标题 对应 <h3> </h3></h3><h4 id="四级标题-四级标题-对应"><a href="#四级标题-四级标题-对应" class="headerlink" title="四级标题                   //四级标题 对应  "></a>四级标题                   //四级标题 对应 <h4> </h4></h4><h5 id="五级标题-五级标题-对应"><a href="#五级标题-五级标题-对应" class="headerlink" title="五级标题                  //五级标题 对应  "></a>五级标题                  //五级标题 对应 <h5> </h5></h5><h6 id="六级标题-六级标题-对应"><a href="#六级标题-六级标题-对应" class="headerlink" title="六级标题                 //六级标题 对应  "></a>六级标题                 //六级标题 对应 <h6> </h6></h6><p>####### 七级标题                //抱歉，木有了（但是他会影响生成的目录，目录行多出一行空行）</p>
-<p>内容强调<br>加粗、斜体<br>字体 <strong>加粗</strong> 显示<br>字体 <em>斜体</em> 显示<br>字体 <strong><em>加粗并斜体</em></strong> 显示<br>字体 加粗 显示<br>字体 斜体 显示<br>字体 加粗并斜体 显示</p>
-<p>字体 <strong>加粗</strong> 显示<br>字体 <em>斜体</em> 显示<br>字体 <strong><em>加粗并斜体</em></strong> 显示<br>组合 <em><strong>加粗并斜体</strong></em> 显示<br>字体 加粗 显示<br>字体 斜体 显示<br>字体 加粗并斜体 显示<br>组合 加粗并斜体 显示</p>
-<p>删除线<br>这样来 <del>删除一段文本</del><br>这样来 删除一段文本</p>
-<p>高亮<br>使用<code>`</code>来强调字符   //想打出  <code>(反引号)需要转义的，加&lt;code&gt;&lt;/code&gt;标签强调
-比如</code>突出背景色`来显示强调效果</p>
-<p>使用`来强调字符<br>比如突出背景色来显示强调效果</p>
-<p>引用显示<br>引用过程中任然支持Markdown语法！</p>
-<p>标准使用</p>
-<blockquote>
-<p>每行开始都使用 ‘&gt;’；<br>引用<strong>开始</strong>；<br>引用<strong>换行</strong>；<br>引用<strong>结束</strong>。</p>
-</blockquote>
-<blockquote>
-<p>还在引用中！</p>
-</blockquote>
-<p>两个回车结束引用！<br>每行开始都使用 ‘&gt;’；<br>引用开始；<br>引用换行；<br>引用结束。</p>
-<p>还在引用中！</p>
-<p>　两个回车结束引用！</p>
-<p>省略使用</p>
-<blockquote>
-<p>仅第一行加应用；<br>引用<strong>开始</strong>；<br>引用<strong>换行</strong>；<br>引用<strong>结束</strong>；</p>
-</blockquote>
-<p>两个回车结束引用,不在引用范围内了！<br>仅第一行加应用；<br>引用开始；<br>引用换行；<br>引用结束；</p>
-<p>　两个回车 结束引用,不在引用范围内了！</p>
-<p>嵌套使用</p>
-<blockquote>
-<p>动物</p>
-<blockquote>
-<p>水生动物<br>陆生动物</p>
-<blockquote>
-<p>猴子<br>人</p>
-<blockquote>
-<p>程序猿<br>攻城狮<br>产品狗 //这里需要注意，没有空行间隔，忽略降级引用标记<br>射鸡虱   //这里需要注意，没有空行间隔，忽略降级引用标记</p>
-</blockquote>
-</blockquote>
-</blockquote>
-</blockquote>
-<blockquote>
-<blockquote>
-<p>两栖类动物</p>
-<blockquote>
-<p>大鳄鱼<br>唐老鸭</p>
-</blockquote>
-</blockquote>
-</blockquote>
-<p>两个回车结束引用,不在引用范围内了！<br>列1   | 列2 | 列3<br>—– | — | —-<br>第1行 | 12  | 13<br>第2行 | 22  | 23<br>第3行 | 32  | 33<br>可以使用冒号来定义对齐方式：</p>
-<table>
-<thead>
-<tr>
-<th align="left">左对齐</th>
-<th align="right">右对齐</th>
-<th align="center">居中</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="left">Computer</td>
-<td align="right">5000 元</td>
-<td align="center">1台</td>
-</tr>
-<tr>
-<td align="left">Phone</td>
-<td align="right">1999 元</td>
-<td align="center">1部</td>
-</tr>
-<tr>
-<td align="left">代码块语法遵循标准 markdown 代码，使用 <figure class="highlight plain"><figcaption><span>， ``` 结束 例如：</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">```Python</span><br><span class="line">#!/usr/bin/env python</span><br><span class="line"># -*- coding: utf-8 -*-</span><br><span class="line">print &apos;Hello World!</span><br></pre></td></tr></table></figure></td>
-<td align="right"></td>
-<td align="center"></td>
-</tr>
-</tbody></table>
-<p> 列表<br>无序列表</p>
-<ul>
-<li>*列表展示</li>
-<li>*列表展示<ul>
-<li>*列表展示</li>
-</ul>
-</li>
-</ul>
-<ul>
-<li>+列表展示</li>
-<li>+列表展示<ul>
-<li>+列表展示</li>
-</ul>
-</li>
-</ul>
-<ul>
-<li>-列表展示</li>
-<li>-列表展示<ul>
-<li>-列表展示</li>
-</ul>
-</li>
-</ul>
-<p>*列表展示<br>*列表展示<br>*列表展示<br>+列表展示<br>+列表展示<br>+列表展示<br>-列表展示<br>-列表展示<br>-列表展示<br>有序列表（CSDN展示不同）<br>这种方式不用手动设置序号，自动生成列表序列</p>
-<ol>
-<li><strong>我是一级序列</strong> </li>
-<li><strong>我是一级序列</strong> </li>
-<li><strong>我是一级序列</strong> <ol>
-<li><em>我是二级序列</em> </li>
-<li><em>我是二级序列</em> </li>
-<li><em>我是二级序列</em> </li>
-</ol>
-</li>
-<li><strong>我是一级序列</strong> </li>
-<li><strong>我是一级序列</strong> <ol>
-<li><em>我是二级序列</em> </li>
-<li><em>我是二级序列</em> </li>
-<li>还是二级序列，没有三级序列<br>这种方式不用手动设置序号，自动生成列表序列</li>
-</ol>
-</li>
-<li>我是一级序列</li>
-<li>我是一级序列</li>
-<li>我是一级序列</li>
-<li>我是二级序列 多于一级序列一个空格</li>
-<li>我是二级序列 多于一级序列一个空格</li>
-<li>我是二级序列 多于一级序列一个空格</li>
-<li>我是一级序列</li>
-<li>我是一级序列</li>
-<li>我是二级序列 多于一级序列一个空格</li>
-<li>我是二级序列 多于一级序列一个空格</li>
-<li>还是二级序列，没有三级序列 虽然多于二级序列一个空格，但是任然是二级序列</li>
-</ol>
-
-          
+          <p>分段 两个回车<br>换行 两个空格 + 回车</p>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2019/09/26/vue相关项目/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
