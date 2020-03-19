@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="tag1,tag2,">
+  <meta name="keywords" content="Hexo, NexT">
 
 
 
@@ -81,17 +81,17 @@
 
 
 
-<meta name="keywords" content="tag1,tag2">
+<meta name="description" content="如何搭建vue脚手架">
 <meta property="og:type" content="article">
-<meta property="og:title" content="微信小程序下拉框">
-<meta property="og:url" content="http://yuqiqi.com/2019/09/25/微信小程序下拉框/index.html">
+<meta property="og:title" content="vue相关功能">
+<meta property="og:url" content="http://yuqiqi.com/2019/09/28/vue相关项目/index.html">
 <meta property="og:site_name" content="七月先森的独立博客">
+<meta property="og:description" content="如何搭建vue脚手架">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="http://yuqiqi.com/images/select.png">
-<meta property="og:updated_time" content="2019-10-06T05:27:12.926Z">
+<meta property="og:updated_time" content="2020-01-24T01:59:06.844Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="微信小程序下拉框">
-<meta name="twitter:image" content="http://yuqiqi.com/images/select.png">
+<meta name="twitter:title" content="vue相关功能">
+<meta name="twitter:description" content="如何搭建vue脚手架">
 
 
 
@@ -121,7 +121,7 @@
 
 
 
-  <link rel="canonical" href="http://yuqiqi.com/2019/09/25/微信小程序下拉框/">
+  <link rel="canonical" href="http://yuqiqi.com/2019/09/28/vue相关项目/">
 
 
 
@@ -142,7 +142,7 @@
     }
 </style>
 
-  <title>微信小程序下拉框 | 七月先森的独立博客</title>
+  <title>vue相关功能 | 七月先森的独立博客</title>
   
 
 
@@ -311,7 +311,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yuqiqi.com/2019/09/25/微信小程序下拉框/">
+    <link itemprop="mainEntityOfPage" href="http://yuqiqi.com/2019/09/28/vue相关项目/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="七月">
@@ -328,7 +328,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">微信小程序下拉框</h1>
+          <h1 class="post-title" itemprop="name headline">vue相关功能</h1>
         
 
         <div class="post-meta">
@@ -340,8 +340,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-09-25T00:00:45+08:00">
-                2019-09-25
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-09-28T21:38:18+08:00">
+                2019-09-28
               </time>
             
 
@@ -351,28 +351,6 @@
           </span>
 
           
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/category/" itemprop="url" rel="index">
-                    <span itemprop="name">category</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
 
           
             
@@ -380,7 +358,7 @@
 
           
           
-             <span id="/2019/09/25/微信小程序下拉框/" class="leancloud_visitors" data-flag-title="微信小程序下拉框">
+             <span id="/2019/09/28/vue相关项目/" class="leancloud_visitors" data-flag-title="vue相关功能">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -410,7 +388,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  609
+                  1.4k
                 </span>
               
 
@@ -426,7 +404,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  3
+                  6
                 </span>
               
             </div>
@@ -447,17 +425,51 @@
       
 
       
-        <p><img src="/images/select.png" alt></p>
-<a id="more"></a>
-<p>#####<!-- wxml --></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">&lt;!-- 下拉框 --&gt;</span><br><span class="line">&lt;view class=&apos;select_box&apos;&gt;</span><br><span class="line">    &lt;view class=&apos;select&apos; catchtap=&apos;selectTap&apos;&gt;</span><br><span class="line">		&lt;input class=&quot;select_text&quot; disabled=&apos;&#123;&#123;isDisabled&#125;&#125;&apos; value=&quot;&#123;&#123;selectData[index]&#125;&#125;&quot;  /&gt;</span><br><span class="line">        &lt;!-- 下拉图片 --&gt;</span><br><span class="line">        &lt;image class=&apos;select_img &#123;&#123;selectShow&amp;&amp;&quot;select_img_rotate&quot;&#125;&#125;&apos; src=&apos;../../images/right.png&apos;  background-size=&quot;contain&quot;&gt;&lt;/image&gt; </span><br><span class="line">    &lt;/view&gt;</span><br><span class="line">    &lt;!-- 列表项布局 --&gt;</span><br><span class="line">    &lt;view class=&apos;option_box&apos; style=&apos;height:&#123;&#123;selectShow?(selectData.length&gt;5?325:selectData.length*50):0&#125;&#125;rpx;&apos;&gt;</span><br><span class="line">    &lt;!-- 选择的列表项 --&gt;</span><br><span class="line">        &lt;text class=&apos;option&apos; wx:for=&apos;&#123;&#123;selectData&#125;&#125;&apos; wx:key=&apos;this&apos; data-index=&apos;&#123;&#123;index&#125;&#125;&apos; catchtap=&apos;optionTap&apos; &gt;&#123;&#123;item&#125;&#125;&lt;/text&gt;</span><br><span class="line">    &lt;/view&gt;</span><br><span class="line">&lt;/view&gt;</span><br></pre></td></tr></table></figure>
+        <h1 id="如何搭建vue脚手架"><a href="#如何搭建vue脚手架" class="headerlink" title="如何搭建vue脚手架"></a>如何搭建vue脚手架</h1><a id="more"></a>
+<p>什么是脚手架: 已经具备核心功能的半成品项目<br>为什么要搭建脚手架: 标准化项目的开发，便于分工协作。<br>何时使用脚手架: 今后只要使用Vue框架做开发，都要先创建Vue框架的脚手架项目代码。<br>如何搭建脚手架: 2步:<br>1)先安装一个能创建脚手架项目的命令行工具:<br>    <strong>npm i -g @vue/cli</strong><br>2)用vue命令，创建一个项目的脚手架代码文件夹<br>    <strong>vue create 项目文件夹名</strong><br>    第一步: Your connection to the default npm registry seems to be slow. Use <a href="https://registry.npm.taobao.org" target="_blank" rel="noopener">https://registry.npm.taobao.org</a> for faster installation? (Y/n) <strong>Y</strong></p>
+<pre><code>第二步: ? Please pick a preset: (Use arrow keys)
+        &gt; default (babel, eslint)
+          &gt; Manually select features //选下边一个
 
-<p>disabled 表示是否禁用改输入框 由于我自己绑定了选中”自定义编辑”就启用该输入框 input中value绑定的值指的是其数组的下标所对应的值<br>列表项中的style所绑定的是其选项框的高 后面的*50可变<br>data-index 表示自定义属性</p>
-<p>#####<!-- wxss --></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br></pre></td><td class="code"><pre><span class="line">&lt;!-- 盒子模型 --&gt;</span><br><span class="line">.select_box&#123;</span><br><span class="line">  width:100%;</span><br><span class="line">  height:70%;</span><br><span class="line">  border-radius: 14rpx;</span><br><span class="line">  position: relative;</span><br><span class="line">&#125;</span><br><span class="line">&lt;!-- 盒子模型的样式 --&gt;</span><br><span class="line">.select_box .select&#123;</span><br><span class="line">  box-sizing: border-box;</span><br><span class="line">  width: 100%;</span><br><span class="line">  height: 100%;</span><br><span class="line">  border-radius: 8rpx;</span><br><span class="line">  display: flex;</span><br><span class="line">  align-items: center;</span><br><span class="line">  padding: 0 10rpx;</span><br><span class="line">&#125;</span><br><span class="line">.select_box .select .select_text&#123;</span><br><span class="line">  font-size: 26rpx;</span><br><span class="line">  color: #777777;</span><br><span class="line">  line-height: 28rpx;</span><br><span class="line">  flex: 1;</span><br><span class="line">&#125;</span><br><span class="line">&lt;!-- 显示时设定动画效果 --&gt;</span><br><span class="line">.select_box .select .select_img&#123;</span><br><span class="line">  width: 30rpx;</span><br><span class="line">  height: 30rpx;</span><br><span class="line">  display: block;</span><br><span class="line">  transition:transform 0.3s;</span><br><span class="line">&#125;</span><br><span class="line">/* 图片旋转 */</span><br><span class="line">.select_box .select .select_img_rotate&#123;</span><br><span class="line">  transform:rotate(90deg); </span><br><span class="line">&#125;</span><br><span class="line">/* 自定义列表 */</span><br><span class="line">.select_box .option_box&#123;</span><br><span class="line">  position: absolute;</span><br><span class="line">  top: calc(100% - 1px);</span><br><span class="line">  width: 100%;</span><br><span class="line">  box-sizing: border-box;</span><br><span class="line">  height: 0;</span><br><span class="line">  overflow-y: auto;</span><br><span class="line">  background: #fff;</span><br><span class="line">  transition: height 0.3s;</span><br><span class="line">  border-left:1px solid #efefef;</span><br><span class="line">  border-right:1px solid #efefef;</span><br><span class="line">&#125;</span><br><span class="line">/* 自定义列表文字 */</span><br><span class="line">.select_box .option_box .option&#123;</span><br><span class="line">  display: block;</span><br><span class="line">  line-height: 30rpx; </span><br><span class="line">  font-size: 26rpx;</span><br><span class="line">  padding: 10rpx;</span><br><span class="line">  </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+  第三步: ? Check the features needed for your project: (Press &lt;space&gt; to select, &lt;a&gt; to toggle all, &lt;i&gt; to invert selection)
+        (*) Babel  //必选: 翻译
+            脚手架代码中采用了模块化开发：
+            抛出模块: module.exports={ ... } nodejs中
+                ES6: export default { ... }
+            引入模块: var 变量=require(&quot;路径&quot;) nodejs
+                 ES6: import 变量 from &quot;路径&quot;
+            因为不是所有浏览器都认识ES6，所以，需要Babel最后将所有ES6的代码翻译为多数浏览器都认识的ES5代码。
+        ( ) TypeScript //微软出的严格的script——不选
+         ( ) Progressive Web App (PWA) Support
+         (*) Router //必选
+         (*) Vuex //Vue中的状态机制。当多个组件需要共用一些数据：比如当前登录用的用户名。这个公共的数据就要放在Vuex中——下个阶段老师将
+         ( ) CSS Pre-processors
+         () Linter / Formatter //千万不要选！是代码质量检查工具。即使代码没错，格式不规范，也报错！
+         ( ) Unit Testing
+         ( ) E2E Testing
 
-<p>#####<!-- js --></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line">// 下拉</span><br><span class="line">  // 点击下拉显示框</span><br><span class="line">  selectTap(e) &#123;</span><br><span class="line">    this.setData(&#123;</span><br><span class="line">      selectShow: !this.data.selectShow</span><br><span class="line">    &#125;);</span><br><span class="line">  &#125;,</span><br><span class="line">  // 点击下拉列表</span><br><span class="line">  optionTap(e) &#123;</span><br><span class="line">    let Index = e.currentTarget.dataset.index;//获取点击的下拉列表选项的下标</span><br><span class="line">    console.log(Index)</span><br><span class="line">    // console.log(e)</span><br><span class="line">    this.setData(&#123;</span><br><span class="line">      index: Index,</span><br><span class="line">      selectShow: !this.data.selectShow,</span><br><span class="line">    &#125;);</span><br><span class="line">    if(Index==4)&#123;</span><br><span class="line">      this.setData(&#123;</span><br><span class="line">        isDisabled:false</span><br><span class="line">      &#125;)</span><br><span class="line">    &#125;</span><br><span class="line">    &lt;!-- 可以输出isDisabled的值 --&gt;</span><br><span class="line">    console.log(this.data.isDisabled)</span><br><span class="line">  &#125;,</span><br><span class="line">  data: &#123;</span><br><span class="line">    // 自定义编辑</span><br><span class="line">    isDisabled:true,</span><br><span class="line">    selectShow: false,//控制下拉列表的显示隐藏，false隐藏、true显示</span><br><span class="line">    selectData: [&apos;请选择类型&apos;, &apos;身份类型&apos;, &apos;身份类型&apos;,&quot;身份类型&quot;,&quot;自定义编辑&quot;],//下拉列表的数据</span><br><span class="line">    index: 0,//选择的下拉列表下标 默认是第一个的值</span><br><span class="line">  &#125;,</span><br></pre></td></tr></table></figure>
+ 第四步: Use history mode for router? (Requires proper server setup for index fallback in production) (Y/n) **n**
+            因为必须要服务端支持，所以才不选。
+            默认Vue的地址栏中都是用#/路径来跳转
+            但是#可能和你的锚点地址冲突。
+            如果即想用vue，又想要锚点地址，只能启用history模式。启用后，地址栏中就没有#了。而是直接用&quot;/路径&quot;。
+
+第五步: Where do you prefer placing config for Babel, PostCSS, ESLint, etc.? (Use arrow keys)
+        &gt; In dedicated config files
+        &gt;In package.json //选这个 将所有的配置都放在一个package.json中。
+
+第六步: Save this as a preset for future projects? (y/N) **N**  不把这次的项目配置保存为今后项目的模板。
+    脚手架文件夹创建成功后: 
+    Successfully created project xz_vue.
+    👉  Get started with the following commands:
+
+     $ cd vue_demo //先进入项目文件夹（vue create后的那个文件夹——vue_demo）
+     $ npm run serve //=运行Live server+Babel的效果。是先将脚手架中浏览器不懂的代码，翻译为浏览器能懂的代码。然后，再将翻译后的页面运行在一个临时的开发服务器中。    强调: npm run serve 必须在项目文件夹内运行
+    保险起见是在vs code中打开vue_demo，然后在package.json文件上右键单击在命令行打开，然后运行:
+    **npm run serve   没有r结尾**</code></pre><h2 id="如何在vscode中创建vue项目模板"><a href="#如何在vscode中创建vue项目模板" class="headerlink" title="如何在vscode中创建vue项目模板"></a>如何在vscode中创建vue项目模板</h2><h2 id="VUE封装axios请求方法"><a href="#VUE封装axios请求方法" class="headerlink" title="VUE封装axios请求方法"></a>VUE封装axios请求方法</h2><!-- more -->
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br></pre></td><td class="code"><pre><span class="line">//创建一个http.js</span><br><span class="line">import Vue from &apos;vue&apos;</span><br><span class="line">import axios from &apos;axios&apos; //全局安装axios: npm install axios --save </span><br><span class="line">import qs from &apos;qs&apos; //全局安装qs:npm install qs</span><br><span class="line">//1.设置请求基础路径</span><br><span class="line">axios.defaults.timeout = 5000 // 响应时间</span><br><span class="line">axios.defaults.headers.post[&apos;Content-Type&apos;] = &apos;application/x-www-form-urlencoded;charset=UTF-8&apos; // 配置post请求头</span><br><span class="line">axios.defaults.headers.get[&apos;Content-Type&apos;] = &apos;application/json;charset=UTF-8&apos; // 配置get请求头</span><br><span class="line"></span><br><span class="line">axios.defaults.baseURL = &apos;http://XXX&apos; // 配置请求后台接口地址</span><br><span class="line">/**</span><br><span class="line"> * get方法，对应get请求</span><br><span class="line"> * @param &#123;String&#125; url [请求的url地址]</span><br><span class="line"> * @param &#123;Object&#125; params [请求时携带的参数]</span><br><span class="line"> */</span><br><span class="line">export function get(url, params)&#123;</span><br><span class="line">    return new Promise((resolve, reject) =&gt;&#123;</span><br><span class="line">        axios.get(url, &#123;</span><br><span class="line">            params: params</span><br><span class="line">        &#125;).then(res =&gt; &#123;</span><br><span class="line">            resolve(res.data);</span><br><span class="line">        &#125;).catch(err =&gt;&#123;</span><br><span class="line">            reject(err.data)</span><br><span class="line">    &#125;)</span><br><span class="line">&#125;);</span><br><span class="line">&#125;</span><br><span class="line">/**</span><br><span class="line"> * post方法，对应post请求</span><br><span class="line"> * @param &#123;String&#125; url [请求的url地址]</span><br><span class="line"> * @param &#123;Object&#125; params [请求时携带的参数]</span><br><span class="line"> */</span><br><span class="line">export function post(url, params) &#123;</span><br><span class="line">    return new Promise((resolve, reject) =&gt; &#123;</span><br><span class="line">         axios.post(url, QS.stringify(params)) //1.qs.parse()将URL解析成对象的形式2.qs.stringify()将对象 序列化成URL的形式，以&amp;进行拼接(post请求就是用这个方法)</span><br><span class="line">        .then(res =&gt; &#123;</span><br><span class="line">            resolve(res.data);</span><br><span class="line">        &#125;)</span><br><span class="line">        .catch(err =&gt;&#123;</span><br><span class="line">            reject(err.data)</span><br><span class="line">        &#125;)</span><br><span class="line">    &#125;);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">//封装完成在main.js中注册</span><br><span class="line">import get from &apos;./http&apos; //路径</span><br><span class="line">Vue.prototype.$get = get; //全局使用</span><br><span class="line">//在某某组件中使用</span><br><span class="line">this.$get(&apos;/url&apos;,&#123;</span><br><span class="line">	params</span><br><span class="line">&#125;).then(res =&gt; &#123;</span><br><span class="line">	console.log(&apos;请求成功结果&apos;,res)</span><br><span class="line">&#125;).catch(err =&gt; &#123;</span><br><span class="line">	console.log(&apos;请求错误原因&apos;,err)</span><br><span class="line">&#125;)</span><br><span class="line">//post请求使用同上</span><br><span class="line"></span><br><span class="line">//或者写成下面的方法</span><br><span class="line">class HttpRequest &#123;</span><br><span class="line">	/**</span><br><span class="line">	 * get方法，对应get请求</span><br><span class="line">	 */</span><br><span class="line">	static get(url, params, config) &#123;</span><br><span class="line">		return new Promise((resolve, reject) =&gt; &#123;</span><br><span class="line">			axios.get(url, &#123;</span><br><span class="line">					params: params</span><br><span class="line">				&#125;, config)</span><br><span class="line">				.then(res =&gt; &#123;</span><br><span class="line">					resolve(res.data);</span><br><span class="line">				&#125;)</span><br><span class="line">				.catch(err =&gt; &#123;</span><br><span class="line">					reject(err.data)</span><br><span class="line">				&#125;)</span><br><span class="line">		&#125;);</span><br><span class="line">	&#125;</span><br><span class="line">	/**</span><br><span class="line">	 * post方法，对应post请求</span><br><span class="line">	 */</span><br><span class="line">	static post(url, params, config) &#123;</span><br><span class="line">		return new Promise((resolve, reject) =&gt; &#123;</span><br><span class="line">			axios.post(url, qs.stringify(params), config)</span><br><span class="line">				.then(res =&gt; &#123;</span><br><span class="line">					resolve(res.data);</span><br><span class="line">				&#125;)</span><br><span class="line">				.catch(err =&gt; &#123;</span><br><span class="line">					reject(err.data)</span><br><span class="line">				&#125;)</span><br><span class="line">		&#125;);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line">export default HttpRequest</span><br><span class="line"></span><br><span class="line">//在main.js中全局注册</span><br><span class="line">import http from &apos;./url&apos; //文件路径</span><br><span class="line">Vue.prototype.$http = http; //注册</span><br><span class="line">this.$http.get(&apos;/url&apos;,&#123;</span><br><span class="line">	params</span><br><span class="line">&#125;).then(res =&gt; &#123;</span><br><span class="line">	console.log(&apos;请求成功&apos;,res)</span><br><span class="line">&#125;).catch(err =&gt; &#123;</span><br><span class="line">	console.log(&apos;请求失败原因&apos;,err)</span><br><span class="line">&#125;)</span><br><span class="line">//post请求把get改成post即可</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">/**</span><br><span class="line"> * 根据一个数组 前端实现模糊搜索</span><br><span class="line"> */</span><br><span class="line">/**</span><br><span class="line"> * 模糊搜索</span><br><span class="line"> * @param &#123;Object&#125; list--搜索的数组</span><br><span class="line"> * @param &#123;Object&#125; keyWord--搜索关键字</span><br><span class="line"> */</span><br><span class="line">fuzzySearch(list, keyWord) &#123;</span><br><span class="line">		var reg =  new RegExp(keyWord);</span><br><span class="line">		var arr = [];</span><br><span class="line">		console.log(&apos;关键字&apos;,reg,reg.test(list[0].name))</span><br><span class="line">		for (var i = 0; i &lt; list.length; i++) &#123;</span><br><span class="line">			if (reg.test(list[i].name)||reg.test(list[i].phone)||reg.test(list[i].carNUm)) &#123;//根据name或者phone或者carNUm进行搜索</span><br><span class="line">				arr.push(list[i]);</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">		return arr;</span><br><span class="line">	&#125;,</span><br></pre></td></tr></table></figure>
+
+
       
     </div>
     
@@ -473,12 +485,12 @@
   <!-- JS库 sweetalert 可修改路径 -->
   <script src="https://cdn.bootcss.com/jquery/2.0.0/jquery.min.js"></script>
   <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
-  <p><span>本文标题:</span><a href="/2019/09/25/微信小程序下拉框/">微信小程序下拉框</a></p>
+  <p><span>本文标题:</span><a href="/2019/09/28/vue相关项目/">vue相关功能</a></p>
   <p><span>文章作者:</span><a href="/" title="访问 七月 的个人博客">七月</a></p>
-  <p><span>发布时间:</span>2019年09月25日 - 00:09</p>
-  <p><span>最后更新:</span>2019年10月06日 - 13:10</p>
-  <p><span>原始链接:</span><a href="/2019/09/25/微信小程序下拉框/" title="微信小程序下拉框">http://yuqiqi.com/2019/09/25/微信小程序下拉框/</a>
-    <span class="copy-path" title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="http://yuqiqi.com/2019/09/25/微信小程序下拉框/" aria-label="复制成功！"></i></span>
+  <p><span>发布时间:</span>2019年09月28日 - 21:09</p>
+  <p><span>最后更新:</span>2020年01月24日 - 09:01</p>
+  <p><span>原始链接:</span><a href="/2019/09/28/vue相关项目/" title="vue相关功能">http://yuqiqi.com/2019/09/28/vue相关项目/</a>
+    <span class="copy-path" title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="http://yuqiqi.com/2019/09/28/vue相关项目/" aria-label="复制成功！"></i></span>
   </p>
   <p><span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank" title="Attribution-NonCommercial-NoDerivatives 4.0 International (CC BY-NC-ND 4.0)">署名-非商业性使用-禁止演绎 4.0 国际</a> 转载请保留原文链接及作者。</p>  
 </div>
@@ -539,14 +551,6 @@
       </div>
     <footer class="post-footer">
       
-        <div class="post-tags">
-          
-            <a href="/tags/tag1/" rel="tag"># tag1</a>
-          
-            <a href="/tags/tag2/" rel="tag"># tag2</a>
-          
-        </div>
-      
 
       
       
@@ -568,8 +572,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/09/23/微信小程序弹出商品框样式/" rel="next" title="微信小程序弹出商品框样式">
-                <i class="fa fa-chevron-left"></i> 微信小程序弹出商品框样式
+              <a href="/2019/09/28/微信小程序相关功功能/" rel="next" title="微信小程序相关功能">
+                <i class="fa fa-chevron-left"></i> 微信小程序相关功能
               </a>
             
           </div>
@@ -577,10 +581,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2019/09/25/微信小程序搜索功能/" rel="prev" title="微信小程序搜索功能">
-                微信小程序搜索功能 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -674,8 +674,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -753,6 +762,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#如何搭建vue脚手架"><span class="nav-number">1.</span> <span class="nav-text">如何搭建vue脚手架</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#如何在vscode中创建vue项目模板"><span class="nav-number">1.1.</span> <span class="nav-text">如何在vscode中创建vue项目模板</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#VUE封装axios请求方法"><span class="nav-number">1.2.</span> <span class="nav-text">VUE封装axios请求方法</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
