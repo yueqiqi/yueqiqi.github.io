@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="Hexo, NexT">
+  <meta name="keywords" content="Vue">
 
 
 
@@ -82,13 +82,14 @@
 
 
 <meta name="description" content="如何搭建vue脚手架">
+<meta name="keywords" content="Vue">
 <meta property="og:type" content="article">
 <meta property="og:title" content="vue相关功能">
-<meta property="og:url" content="http://yuqiqi.com/2019/09/28/vue相关项目/index.html">
+<meta property="og:url" content="http://yueqiqi.com/2019/09/28/vue相关项目/index.html">
 <meta property="og:site_name" content="七月先森的独立博客">
 <meta property="og:description" content="如何搭建vue脚手架">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2020-01-24T01:59:06.844Z">
+<meta property="og:updated_time" content="2020-06-22T14:21:33.878Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="vue相关功能">
 <meta name="twitter:description" content="如何搭建vue脚手架">
@@ -121,7 +122,7 @@
 
 
 
-  <link rel="canonical" href="http://yuqiqi.com/2019/09/28/vue相关项目/">
+  <link rel="canonical" href="http://yueqiqi.com/2019/09/28/vue相关项目/">
 
 
 
@@ -209,16 +210,6 @@
         </li>
       
         
-        <li class="menu-item menu-item-about">
-          <a href="/about/" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-user"></i> <br>
-            
-            关于
-          </a>
-        </li>
-      
-        
         <li class="menu-item menu-item-tags">
           <a href="/tags/" rel="section">
             
@@ -248,41 +239,43 @@
           </a>
         </li>
       
-        
-        <li class="menu-item menu-item-schedule">
-          <a href="/schedule/" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-calendar"></i> <br>
-            
-            日程表
-          </a>
-        </li>
-      
-        
-        <li class="menu-item menu-item-sitemap">
-          <a href="/sitemap.xml" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-sitemap"></i> <br>
-            
-            站点地图
-          </a>
-        </li>
-      
-        
-        <li class="menu-item menu-item-commonweal">
-          <a href="/404/" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-heartbeat"></i> <br>
-            
-            公益404
-          </a>
-        </li>
-      
 
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br>
+            
+            搜索
+          </a>
+        </li>
       
     </ul>
   
 
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off" placeholder="搜索..." spellcheck="false" type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
   
 </nav>
 
@@ -311,7 +304,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yuqiqi.com/2019/09/28/vue相关项目/">
+    <link itemprop="mainEntityOfPage" href="http://yueqiqi.com/2019/09/28/vue相关项目/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="七月">
@@ -466,7 +459,7 @@
      $ cd vue_demo //先进入项目文件夹（vue create后的那个文件夹——vue_demo）
      $ npm run serve //=运行Live server+Babel的效果。是先将脚手架中浏览器不懂的代码，翻译为浏览器能懂的代码。然后，再将翻译后的页面运行在一个临时的开发服务器中。    强调: npm run serve 必须在项目文件夹内运行
     保险起见是在vs code中打开vue_demo，然后在package.json文件上右键单击在命令行打开，然后运行:
-    **npm run serve   没有r结尾**</code></pre><h2 id="如何在vscode中创建vue项目模板"><a href="#如何在vscode中创建vue项目模板" class="headerlink" title="如何在vscode中创建vue项目模板"></a>如何在vscode中创建vue项目模板</h2><h2 id="VUE封装axios请求方法"><a href="#VUE封装axios请求方法" class="headerlink" title="VUE封装axios请求方法"></a>VUE封装axios请求方法</h2><!-- more -->
+    **npm run serve   没有r结尾**</code></pre><h2 id="VUE封装axios请求方法"><a href="#VUE封装axios请求方法" class="headerlink" title="VUE封装axios请求方法"></a>VUE封装axios请求方法</h2><!-- more -->
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br></pre></td><td class="code"><pre><span class="line">//创建一个http.js</span><br><span class="line">import Vue from &apos;vue&apos;</span><br><span class="line">import axios from &apos;axios&apos; //全局安装axios: npm install axios --save </span><br><span class="line">import qs from &apos;qs&apos; //全局安装qs:npm install qs</span><br><span class="line">//1.设置请求基础路径</span><br><span class="line">axios.defaults.timeout = 5000 // 响应时间</span><br><span class="line">axios.defaults.headers.post[&apos;Content-Type&apos;] = &apos;application/x-www-form-urlencoded;charset=UTF-8&apos; // 配置post请求头</span><br><span class="line">axios.defaults.headers.get[&apos;Content-Type&apos;] = &apos;application/json;charset=UTF-8&apos; // 配置get请求头</span><br><span class="line"></span><br><span class="line">axios.defaults.baseURL = &apos;http://XXX&apos; // 配置请求后台接口地址</span><br><span class="line">/**</span><br><span class="line"> * get方法，对应get请求</span><br><span class="line"> * @param &#123;String&#125; url [请求的url地址]</span><br><span class="line"> * @param &#123;Object&#125; params [请求时携带的参数]</span><br><span class="line"> */</span><br><span class="line">export function get(url, params)&#123;</span><br><span class="line">    return new Promise((resolve, reject) =&gt;&#123;</span><br><span class="line">        axios.get(url, &#123;</span><br><span class="line">            params: params</span><br><span class="line">        &#125;).then(res =&gt; &#123;</span><br><span class="line">            resolve(res.data);</span><br><span class="line">        &#125;).catch(err =&gt;&#123;</span><br><span class="line">            reject(err.data)</span><br><span class="line">    &#125;)</span><br><span class="line">&#125;);</span><br><span class="line">&#125;</span><br><span class="line">/**</span><br><span class="line"> * post方法，对应post请求</span><br><span class="line"> * @param &#123;String&#125; url [请求的url地址]</span><br><span class="line"> * @param &#123;Object&#125; params [请求时携带的参数]</span><br><span class="line"> */</span><br><span class="line">export function post(url, params) &#123;</span><br><span class="line">    return new Promise((resolve, reject) =&gt; &#123;</span><br><span class="line">         axios.post(url, QS.stringify(params)) //1.qs.parse()将URL解析成对象的形式2.qs.stringify()将对象 序列化成URL的形式，以&amp;进行拼接(post请求就是用这个方法)</span><br><span class="line">        .then(res =&gt; &#123;</span><br><span class="line">            resolve(res.data);</span><br><span class="line">        &#125;)</span><br><span class="line">        .catch(err =&gt;&#123;</span><br><span class="line">            reject(err.data)</span><br><span class="line">        &#125;)</span><br><span class="line">    &#125;);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">//封装完成在main.js中注册</span><br><span class="line">import get from &apos;./http&apos; //路径</span><br><span class="line">Vue.prototype.$get = get; //全局使用</span><br><span class="line">//在某某组件中使用</span><br><span class="line">this.$get(&apos;/url&apos;,&#123;</span><br><span class="line">	params</span><br><span class="line">&#125;).then(res =&gt; &#123;</span><br><span class="line">	console.log(&apos;请求成功结果&apos;,res)</span><br><span class="line">&#125;).catch(err =&gt; &#123;</span><br><span class="line">	console.log(&apos;请求错误原因&apos;,err)</span><br><span class="line">&#125;)</span><br><span class="line">//post请求使用同上</span><br><span class="line"></span><br><span class="line">//或者写成下面的方法</span><br><span class="line">class HttpRequest &#123;</span><br><span class="line">	/**</span><br><span class="line">	 * get方法，对应get请求</span><br><span class="line">	 */</span><br><span class="line">	static get(url, params, config) &#123;</span><br><span class="line">		return new Promise((resolve, reject) =&gt; &#123;</span><br><span class="line">			axios.get(url, &#123;</span><br><span class="line">					params: params</span><br><span class="line">				&#125;, config)</span><br><span class="line">				.then(res =&gt; &#123;</span><br><span class="line">					resolve(res.data);</span><br><span class="line">				&#125;)</span><br><span class="line">				.catch(err =&gt; &#123;</span><br><span class="line">					reject(err.data)</span><br><span class="line">				&#125;)</span><br><span class="line">		&#125;);</span><br><span class="line">	&#125;</span><br><span class="line">	/**</span><br><span class="line">	 * post方法，对应post请求</span><br><span class="line">	 */</span><br><span class="line">	static post(url, params, config) &#123;</span><br><span class="line">		return new Promise((resolve, reject) =&gt; &#123;</span><br><span class="line">			axios.post(url, qs.stringify(params), config)</span><br><span class="line">				.then(res =&gt; &#123;</span><br><span class="line">					resolve(res.data);</span><br><span class="line">				&#125;)</span><br><span class="line">				.catch(err =&gt; &#123;</span><br><span class="line">					reject(err.data)</span><br><span class="line">				&#125;)</span><br><span class="line">		&#125;);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line">export default HttpRequest</span><br><span class="line"></span><br><span class="line">//在main.js中全局注册</span><br><span class="line">import http from &apos;./url&apos; //文件路径</span><br><span class="line">Vue.prototype.$http = http; //注册</span><br><span class="line">this.$http.get(&apos;/url&apos;,&#123;</span><br><span class="line">	params</span><br><span class="line">&#125;).then(res =&gt; &#123;</span><br><span class="line">	console.log(&apos;请求成功&apos;,res)</span><br><span class="line">&#125;).catch(err =&gt; &#123;</span><br><span class="line">	console.log(&apos;请求失败原因&apos;,err)</span><br><span class="line">&#125;)</span><br><span class="line">//post请求把get改成post即可</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">/**</span><br><span class="line"> * 根据一个数组 前端实现模糊搜索</span><br><span class="line"> */</span><br><span class="line">/**</span><br><span class="line"> * 模糊搜索</span><br><span class="line"> * @param &#123;Object&#125; list--搜索的数组</span><br><span class="line"> * @param &#123;Object&#125; keyWord--搜索关键字</span><br><span class="line"> */</span><br><span class="line">fuzzySearch(list, keyWord) &#123;</span><br><span class="line">		var reg =  new RegExp(keyWord);</span><br><span class="line">		var arr = [];</span><br><span class="line">		console.log(&apos;关键字&apos;,reg,reg.test(list[0].name))</span><br><span class="line">		for (var i = 0; i &lt; list.length; i++) &#123;</span><br><span class="line">			if (reg.test(list[i].name)||reg.test(list[i].phone)||reg.test(list[i].carNUm)) &#123;//根据name或者phone或者carNUm进行搜索</span><br><span class="line">				arr.push(list[i]);</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">		return arr;</span><br><span class="line">	&#125;,</span><br></pre></td></tr></table></figure>
 
 
@@ -488,9 +481,9 @@
   <p><span>本文标题:</span><a href="/2019/09/28/vue相关项目/">vue相关功能</a></p>
   <p><span>文章作者:</span><a href="/" title="访问 七月 的个人博客">七月</a></p>
   <p><span>发布时间:</span>2019年09月28日 - 21:09</p>
-  <p><span>最后更新:</span>2020年01月24日 - 09:01</p>
-  <p><span>原始链接:</span><a href="/2019/09/28/vue相关项目/" title="vue相关功能">http://yuqiqi.com/2019/09/28/vue相关项目/</a>
-    <span class="copy-path" title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="http://yuqiqi.com/2019/09/28/vue相关项目/" aria-label="复制成功！"></i></span>
+  <p><span>最后更新:</span>2020年06月22日 - 22:06</p>
+  <p><span>原始链接:</span><a href="/2019/09/28/vue相关项目/" title="vue相关功能">http://yueqiqi.com/2019/09/28/vue相关项目/</a>
+    <span class="copy-path" title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="http://yueqiqi.com/2019/09/28/vue相关项目/" aria-label="复制成功！"></i></span>
   </p>
   <p><span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank" title="Attribution-NonCommercial-NoDerivatives 4.0 International (CC BY-NC-ND 4.0)">署名-非商业性使用-禁止演绎 4.0 国际</a> 转载请保留原文链接及作者。</p>  
 </div>
@@ -581,6 +574,10 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2020/06/22/60个前端常用工具方法/" rel="prev" title="60个前端常用工具方法">
+                60个前端常用工具方法 <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -691,7 +688,7 @@
               <img class="site-author-image" itemprop="image" src="/images/favicon.jpg" alt="七月">
             
               <p class="site-author-name" itemprop="name">七月</p>
-              <p class="site-description motion-element" itemprop="description"></p>
+              <p class="site-description motion-element" itemprop="description">性别男，爱好女；非著名北漂挨踢男、程序猿，伪文艺2B青年，资深屌丝；爱网络，爱旅游，各种控，各种宅，不纠结会死星人，不折腾会死星人。此人纯属虚构，如有雷同，纯属被抄袭……;</p>
           </div>
 
           <nav class="site-state motion-element">
@@ -701,7 +698,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">7</span>
+                  <span class="site-state-item-count">8</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -712,7 +709,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">1</span>
+                  <span class="site-state-item-count">2</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -722,10 +719,10 @@
               
               
               <div class="site-state-item site-state-tags">
-                
-                  <span class="site-state-item-count">4</span>
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">3</span>
                   <span class="site-state-item-name">标签</span>
-                
+                </a>
               </div>
             
 
@@ -772,7 +769,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#如何搭建vue脚手架"><span class="nav-number">1.</span> <span class="nav-text">如何搭建vue脚手架</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#如何在vscode中创建vue项目模板"><span class="nav-number">1.1.</span> <span class="nav-text">如何在vscode中创建vue项目模板</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#VUE封装axios请求方法"><span class="nav-number">1.2.</span> <span class="nav-text">VUE封装axios请求方法</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#如何搭建vue脚手架"><span class="nav-number">1.</span> <span class="nav-text">如何搭建vue脚手架</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#VUE封装axios请求方法"><span class="nav-number">1.1.</span> <span class="nav-text">VUE封装axios请求方法</span></a></li></ol></li></ol></div>
             
 
           </div>
@@ -824,7 +821,7 @@
 
         
 <div class="busuanzi-count">
-  <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
 
   
     <span class="site-uv">
@@ -1003,6 +1000,323 @@
 
 
   
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
 
 
 
