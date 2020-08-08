@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="github搭建,">
+  <meta name="keywords" content="js数组">
 
 
 
@@ -81,18 +81,18 @@
 
 
 
-<meta name="description" content="#Git代码托管工具:将代码从当前电脑传到远程端—&amp;gt; 传输、协作、版本控制git,svn传输：https://git-scm.com/downloads">
-<meta name="keywords" content="github搭建">
+<meta name="description" content="生成类似[1-100]这样的的数组：测试大量数组数据时可以： 1let arr = new Array(100).fill(0).map((item, index) =&amp;gt; index + 1)">
+<meta name="keywords" content="js数组">
 <meta property="og:type" content="article">
-<meta property="og:title" content="如何搭建github">
-<meta property="og:url" content="http://yueqiqi.com/2019/09/22/如何搭建github/index.html">
+<meta property="og:title" content="JS数组常用技巧">
+<meta property="og:url" content="http://yueqiqi.com/2020/08/08/JS数组常用技巧/index.html">
 <meta property="og:site_name" content="七月先森的独立博客">
-<meta property="og:description" content="#Git代码托管工具:将代码从当前电脑传到远程端—&amp;gt; 传输、协作、版本控制git,svn传输：https://git-scm.com/downloads">
+<meta property="og:description" content="生成类似[1-100]这样的的数组：测试大量数组数据时可以： 1let arr = new Array(100).fill(0).map((item, index) =&amp;gt; index + 1)">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2020-06-23T14:18:19.900Z">
+<meta property="og:updated_time" content="2020-08-08T10:58:06.383Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="如何搭建github">
-<meta name="twitter:description" content="#Git代码托管工具:将代码从当前电脑传到远程端—&amp;gt; 传输、协作、版本控制git,svn传输：https://git-scm.com/downloads">
+<meta name="twitter:title" content="JS数组常用技巧">
+<meta name="twitter:description" content="生成类似[1-100]这样的的数组：测试大量数组数据时可以： 1let arr = new Array(100).fill(0).map((item, index) =&amp;gt; index + 1)">
 
 
 
@@ -122,7 +122,7 @@
 
 
 
-  <link rel="canonical" href="http://yueqiqi.com/2019/09/22/如何搭建github/">
+  <link rel="canonical" href="http://yueqiqi.com/2020/08/08/JS数组常用技巧/">
 
 
 
@@ -143,7 +143,7 @@
     }
 </style>
 
-  <title>如何搭建github | 七月先森的独立博客</title>
+  <title>JS数组常用技巧 | 七月先森的独立博客</title>
   
 
 
@@ -304,7 +304,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yueqiqi.com/2019/09/22/如何搭建github/">
+    <link itemprop="mainEntityOfPage" href="http://yueqiqi.com/2020/08/08/JS数组常用技巧/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="七月">
@@ -321,7 +321,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">如何搭建github</h1>
+          <h1 class="post-title" itemprop="name headline">JS数组常用技巧</h1>
         
 
         <div class="post-meta">
@@ -333,8 +333,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-09-22T23:13:15+08:00">
-                2019-09-22
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-08-08T18:57:13+08:00">
+                2020-08-08
               </time>
             
 
@@ -344,6 +344,28 @@
           </span>
 
           
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/js/" itemprop="url" rel="index">
+                    <span itemprop="name">js</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
 
           
             
@@ -351,7 +373,7 @@
 
           
           
-             <span id="/2019/09/22/如何搭建github/" class="leancloud_visitors" data-flag-title="如何搭建github">
+             <span id="/2020/08/08/JS数组常用技巧/" class="leancloud_visitors" data-flag-title="JS数组常用技巧">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -381,7 +403,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  383
+                  2.5k
                 </span>
               
 
@@ -397,7 +419,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  1
+                  11
                 </span>
               
             </div>
@@ -418,22 +440,66 @@
       
 
       
-        <p>#Git<br>代码托管工具:将代码从当前电脑传到远程端—&gt; 传输、协作、版本控制<br>git,svn<br>传输：<br><a href="https://git-scm.com/downloads" target="_blank" rel="noopener">https://git-scm.com/downloads</a></p>
-<a id="more"></a>
+        <h3 id="生成类似-1-100-这样的的数组："><a href="#生成类似-1-100-这样的的数组：" class="headerlink" title="生成类似[1-100]这样的的数组："></a>生成类似[1-100]这样的的数组：</h3><p>测试大量数组数据时可以：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">let arr = new Array(100).fill(0).map((item, index) =&gt; index + 1)</span><br></pre></td></tr></table></figure>
 
-<h1 id="码云、github-网站，开源平台"><a href="#码云、github-网站，开源平台" class="headerlink" title="码云、github  : 网站，开源平台"></a>码云、github  : 网站，开源平台</h1><h1 id="github"><a href="#github" class="headerlink" title="github"></a>github</h1><h1 id="https-github-com"><a href="#https-github-com" class="headerlink" title="https://github.com/"></a><a href="https://github.com/" target="_blank" rel="noopener">https://github.com/</a></h1><h1 id="注册邮箱："><a href="#注册邮箱：" class="headerlink" title="注册邮箱："></a>注册邮箱：</h1><p>sina.com,<br>yahoo.com,<br>163.com,<br>126.com,<br>outlook.com,<br>hotmail.com<br>邮箱用户名：密码： github用户名，密码：<br>chrome插件：adblock,google,history</p>
-<p>图形验证码：<br>create account –&gt; 创建账户</p>
-<ol>
-<li>$0;</li>
-<li>somewhat experienced  单选</li>
-<li>多选：design , development,research,program management</li>
-<li>professional</li>
-<li>html,css,js,python,node,angular,react<br>css3,canvas,echarts,ajax</li>
-</ol>
-<p>电脑需要安装git.exe<br>①授权本台电脑可以使用github账号,生成密钥<br>ssh-keygen -t rsa -C “<a href="mailto:xxx@xxx.com" target="_blank" rel="noopener">xxx@xxx.com</a>“  你的邮箱<br>②敲三次回车<br>③生成一串图形的乱码(c://user/.ssh/rsa文件2个)<br>④将rsa.pub 使用editpuls打开  ctrl + a , ctrl + c<br>⑤打开github.com 找到ssh and gpg key<br>—&gt; new ssh key ,ctrl + v</p>
-<p>配置 全局用户名和邮箱<br>①git config –global user.name “xxxx”<br>②git config –global user.email “<a href="mailto:xxx@xxx.com" target="_blank" rel="noopener">xxx@xxx.com</a>“<br>③ssh -T <a href="mailto:git@github.com" target="_blank" rel="noopener">git@github.com</a><br>yes<br>—&gt; hi,xxx ,you’ve authentic successfully…<br>本地仓库 –  远程仓库<br>本地仓库：<br>创建文件夹  –&gt; 进入文件夹</p>
-<p>①初始化本地虚拟仓库并提交到远程仓库：<br>git init       # –&gt;生成本地   .git  文件夹  –&gt; 本地仓库<br>echo “132321”&gt;&gt;2.txt    # 输出一个文件<br>git add 2.txt       # 添加文件<br>git commit -m “第一次提交”  #提交注释及文件到缓存区<br>git remote add origin    <a href="mailto:xxx@github.comxxxx" target="_blank" rel="noopener">xxx@github.comxxxx</a>  #添加远程地址<br>git push -u origin master  #推送到仓库</p>
-<p>②以后所有的推送<br>git add 3.txt    / git add .<br>git commit -m “第二次提交”<br>git push</p>
+<a id="more"></a>
+<h3 id="数组解构赋值应用"><a href="#数组解构赋值应用" class="headerlink" title="数组解构赋值应用"></a>数组解构赋值应用</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">// 交换变量</span><br><span class="line">[a, b] = [b, a]</span><br><span class="line">[o.a, o.b] = [o.b, o.a]</span><br><span class="line">// 生成剩余数组</span><br><span class="line">const [a, ...rest] = [...&apos;asdf&apos;] // a：&apos;a&apos;，rest: [&quot;s&quot;, &quot;d&quot;, &quot;f&quot;]</span><br></pre></td></tr></table></figure>
+
+<h3 id="数组浅拷贝"><a href="#数组浅拷贝" class="headerlink" title="数组浅拷贝"></a>数组浅拷贝</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">const arr = [1, 2, 3]</span><br><span class="line">const arrClone = [...arr]</span><br><span class="line">// 对象也可以这样浅拷贝</span><br><span class="line">const obj = &#123; a: 1 &#125;</span><br><span class="line">const objClone = &#123; ...obj &#125;</span><br></pre></td></tr></table></figure>
+
+<p>浅拷贝方法有很多如arr.slice(0, arr.length)/Arror.from(arr)等，但是用了…操作符之后就不会再想用其他的了~</p>
+<h3 id="数组合并"><a href="#数组合并" class="headerlink" title="数组合并"></a>数组合并</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">const arr1 = [1, 2, 3]</span><br><span class="line">const arr2 = [4, 5, 6]</span><br><span class="line">const arr3 = [7, 8, 9]</span><br><span class="line">const arr = [...arr1, ...arr2, ...arr3]</span><br></pre></td></tr></table></figure>
+
+<p>arr1.concat(arr2, arr3)同样可以实现合并，但是用了…操作符之后就不会再想用其他的了~</p>
+<h3 id="数组去重"><a href="#数组去重" class="headerlink" title="数组去重"></a>数组去重</h3><h4 id="普通数组"><a href="#普通数组" class="headerlink" title="普通数组"></a>普通数组</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">const arr = [1, 1, 2, 2, 3, 4, 5, 5]</span><br><span class="line">const newArr = [...new Set(arr)]</span><br></pre></td></tr></table></figure>
+
+<p>new Set(arr)接受一个数组参数并生成一个set结构的数据类型。set数据类型的元素不会重复且是Array Iterator，所以可以利用这个特性来去重。</p>
+<h4 id="根据对象中的某个键值去重"><a href="#根据对象中的某个键值去重" class="headerlink" title="根据对象中的某个键值去重"></a>根据对象中的某个键值去重</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">deWeight(arry) &#123;</span><br><span class="line">	let newAry = [];</span><br><span class="line">	for (let i = 0; i &lt; arry.length; i++) &#123;</span><br><span class="line">		if (newAry.indexOf(arry[i].id) == -1) &#123;</span><br><span class="line">			newAry.push(arry[i]);</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	return newAry;</span><br><span class="line">&#125;,</span><br></pre></td></tr></table></figure>
+
+<h4 id="数组对象去重"><a href="#数组对象去重" class="headerlink" title="数组对象去重"></a>数组对象去重</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">uniqs(array) &#123;</span><br><span class="line">let temp = []; //一个新的临时数组</span><br><span class="line">    for (let i = 0; i &lt; array.length; i++) &#123;</span><br><span class="line">    	if (temp.length == 0) &#123;</span><br><span class="line">    		temp.push(array[i]);</span><br><span class="line">    	&#125; else &#123;</span><br><span class="line">    		let o = 0;</span><br><span class="line">    		for (let a = 0; a &lt; temp.length; a++) &#123;</span><br><span class="line">    			var obj = array[i];</span><br><span class="line">    			var obj1 = temp[a];</span><br><span class="line">    			if (JSON.stringify(obj1) === JSON.stringify(obj)) &#123;</span><br><span class="line">    				o = 1;</span><br><span class="line">    				break;</span><br><span class="line">    			&#125;</span><br><span class="line">    		&#125;</span><br><span class="line">    		if (o == 0) &#123;</span><br><span class="line">    			temp.push(array[i]);</span><br><span class="line">    		&#125;</span><br><span class="line">    	&#125;</span><br><span class="line">    &#125;</span><br><span class="line">    return temp;</span><br><span class="line">&#125;,</span><br></pre></td></tr></table></figure>
+
+<h3 id="数组取交集"><a href="#数组取交集" class="headerlink" title="数组取交集"></a>数组取交集</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">const a = [0, 1, 2, 3, 4, 5]</span><br><span class="line">const b = [3, 4, 5, 6, 7, 8]</span><br><span class="line">const duplicatedValues = [...new Set(a)].filter(item =&gt; b.includes(item))</span><br><span class="line">duplicatedValues // [3, 4, 5]</span><br></pre></td></tr></table></figure>
+
+<h3 id="数组取差集"><a href="#数组取差集" class="headerlink" title="数组取差集"></a>数组取差集</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">const a = [0, 1, 2, 3, 4, 5]</span><br><span class="line">const b = [3, 4, 5, 6, 7, 8]</span><br><span class="line">const diffValues = [...new Set([...a, ...b])].filter(item =&gt; !b.includes(item) || !a.includes(item)) // [0, 1, 2, 6, 7, 8]</span><br></pre></td></tr></table></figure>
+
+<h3 id="数组转对象"><a href="#数组转对象" class="headerlink" title="数组转对象"></a>数组转对象</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">const arr = [1, 2, 3, 4]</span><br><span class="line">const newObj = &#123;...arr&#125; // &#123;0: 1, 1: 2, 2: 3, 3: 4&#125;</span><br><span class="line">const obj = &#123;0: 0, 1: 1, 2: 2, length 3&#125;</span><br><span class="line">// 对象转数组不能用展开操作符，因为展开操作符必须用在可迭代对象上</span><br><span class="line">let newArr = [...obj] // Uncaught TypeError: object is not iterable...</span><br><span class="line">// 可以使用Array.form()将类数组对象转为数组</span><br><span class="line">let newArr = Array.from(obj) // [0, 1, 2]</span><br></pre></td></tr></table></figure>
+
+<h3 id="数组常用遍历"><a href="#数组常用遍历" class="headerlink" title="数组常用遍历"></a>数组常用遍历</h3><p>数组常用遍历有 forEach、every、some、filter、map、reduce、reduceRight、find、findIndex 等方法，很多方法都可以达到同样的效果。数组方法不仅要会用，而且要用好。要用好就要知道什么时候用什么方法。</p>
+<h3 id="遍历的混合使用"><a href="#遍历的混合使用" class="headerlink" title="遍历的混合使用"></a>遍历的混合使用</h3><p>filter、map方法返回值仍旧是一个数组，所以可以搭配其他数组遍历方法混合使用。注意遍历越多效率越低~</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">const arr = [1, 2, 3, 4, 5]</span><br><span class="line">const value = arr</span><br><span class="line">    .map(item =&gt; item * 3)</span><br><span class="line">    .filter(item =&gt; item % 2 === 0)</span><br><span class="line">    .map(item =&gt; item + 1)</span><br><span class="line">    .reduce((prev, curr) =&gt; prev + curr, 0)</span><br></pre></td></tr></table></figure>
+
+<h3 id="检测数组所有元素是否都符合判断条件"><a href="#检测数组所有元素是否都符合判断条件" class="headerlink" title="检测数组所有元素是否都符合判断条件"></a>检测数组所有元素是否都符合判断条件</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">const arr = [1, 2, 3, 4, 5]</span><br><span class="line">const isAllNum = arr.every(item =&gt; typeof item === &apos;number&apos;)</span><br></pre></td></tr></table></figure>
+
+<h3 id="检测数组是否有元素符合判断条件"><a href="#检测数组是否有元素符合判断条件" class="headerlink" title="检测数组是否有元素符合判断条件"></a>检测数组是否有元素符合判断条件</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">const arr = [1, 2, 3, 4, 5]</span><br><span class="line">const hasNum = arr.some(item =&gt; typeof item === &apos;number&apos;)</span><br></pre></td></tr></table></figure>
+
+<h3 id="找到第一个符合条件的元素-下标"><a href="#找到第一个符合条件的元素-下标" class="headerlink" title="找到第一个符合条件的元素/下标"></a>找到第一个符合条件的元素/下标</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">const arr = [1, 2, 3, 4, 5]</span><br><span class="line">const findItem = arr.find(item =&gt; item === 3) // 返回子项</span><br><span class="line">const findIndex = arr.findIndex(item =&gt; item === 3) // 返回子项的下标</span><br></pre></td></tr></table></figure>
+
+<h3 id="数组使用误区"><a href="#数组使用误区" class="headerlink" title="数组使用误区"></a>数组使用误区</h3><p>数组的方法很多，很多方法都可以达到同样的效果，所以在使用时要根据需求使用合适的方法。<br>垃圾代码产生的很大原因是数组常用方法使用不当，这里有一下需要注意的点：</p>
+<h4 id="array-includes-和-array-indexOf"><a href="#array-includes-和-array-indexOf" class="headerlink" title="array.includes() 和 array.indexOf()"></a>array.includes() 和 array.indexOf()</h4><p>array.includes() 返回布尔值，array.indexOf() 返回数组子项的索引。indexOf 一定要在需要索引值的情况下使用。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">const arr = [1, 2, 3, 4, 5]</span><br><span class="line"></span><br><span class="line">// 使用indexOf，需要用到索引值</span><br><span class="line">const index = arr.indexOf(1) // 0</span><br><span class="line">if (~index) &#123; // 若index === -1，~index得到0，判断不成立；若index不为-1，则~index得到非0，判断成立。</span><br><span class="line">    arr.spilce(index, 1)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">// 使用includes，不需要用到索引值</span><br><span class="line">// 此时若用indexOf会造成上下文上的阅读负担：到底其他地方有没有用到这个index?</span><br><span class="line">const isExist = arr.includes(6) // true</span><br><span class="line">if (!isExist) &#123;</span><br><span class="line">    arr.push(6)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="array-find-、-array-findIndex-和-array-some"><a href="#array-find-、-array-findIndex-和-array-some" class="headerlink" title="array.find() 、 array.findIndex() 和 array.some()"></a>array.find() 、 array.findIndex() 和 array.some()</h4><p>array.find()返回值是第一个符合条件的数组子项，array.findIndex() 返回第一个符合条件的数组子项的下标，array.some() 返回有无复合条件的子项，如有返回true，若无返回false。注意这三个都是短路操作，即找到符合条件的之后就不在继续遍历。<br>在需要数组的子项的时候使用array.find() ；需要子项的索引值的时候使用 array.findIndex() ；而若只需要知道有无符合条件的子项，则用 array.some()。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">const arr = [&#123;label: &apos;男&apos;, value: 0&#125;, &#123;label: &apos;女&apos;, value: 1&#125;, &#123;label: &apos;不男不女&apos;, value: 2&#125;]</span><br><span class="line"></span><br><span class="line">// 使用some</span><br><span class="line">const isExist = arr.some(item =&gt; item.value === 2)</span><br><span class="line">if (isExist) &#123;</span><br><span class="line">    console.log(&apos;哈哈哈找到了&apos;)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">// 使用find</span><br><span class="line">const item = arr.find(item =&gt; item.value === 2)</span><br><span class="line">if (item) &#123;</span><br><span class="line">    console.log(item.label)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">// 使用findIndex</span><br><span class="line">const index = arr.findIndex(item =&gt; item.value === 2)</span><br><span class="line">if (~index) &#123;</span><br><span class="line">    const delItem = arr[index]</span><br><span class="line">    arr.splice(index, 1)</span><br><span class="line">    console.log(`你删除了$&#123;delItem.label&#125;`)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>建议在只需要布尔值的时候和数组子项是字符串或数字的时候使用</p>
+<h5 id="array-some"><a href="#array-some" class="headerlink" title="array.some()"></a>array.some()</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line">// 当子包含数字0的时候可能出错</span><br><span class="line">const arr = [0, 1, 2, 3, 4]</span><br><span class="line"></span><br><span class="line">// 正确</span><br><span class="line">const isExist = arr.some(item =&gt; item === 0)</span><br><span class="line">if (isExist) &#123;</span><br><span class="line">    console.log(&apos;存在要找的子项，很舒服~&apos;)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">// 错误</span><br><span class="line">const isExist = arr.find(item =&gt; item === 0)</span><br><span class="line">if (isExist) &#123; // isExist此时是0，隐式转换为布尔值后是false</span><br><span class="line">    console.log(&apos;执行不到这里~&apos;)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">// 当子项包含空字符串的时候也可能出错</span><br><span class="line">const arr = [&apos;&apos;, &apos;asdf&apos;, &apos;qwer&apos;, &apos;...&apos;]</span><br><span class="line"></span><br><span class="line">// 正确</span><br><span class="line">const isExist = arr.some(item =&gt; item === &apos;&apos;)</span><br><span class="line">if (isExist) &#123;</span><br><span class="line">    console.log(&apos;存在要找的子项，很舒服~&apos;)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">// 错误</span><br><span class="line">const isExist = arr.find(item =&gt; item === &apos;&apos;)</span><br><span class="line">if (isExist) &#123; // isExist此时是&apos;&apos;，隐式转换为布尔值后是false</span><br><span class="line">    console.log(&apos;执行不到这里~&apos;)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="array-find-和-array-filter"><a href="#array-find-和-array-filter" class="headerlink" title="array.find() 和 array.filter()"></a>array.find() 和 array.filter()</h4><p>只需要知道 array.filter() 返回的是所有符合条件的子项组成的数组，会遍历所有数组；而 array.find() 只返回第一个符合条件的子项，是短路操作。不再举例~</p>
+<h4 id="合理使用-Set-数据结构"><a href="#合理使用-Set-数据结构" class="headerlink" title="合理使用 Set 数据结构"></a>合理使用 Set 数据结构</h4><p>由于 es6 原生提供了 Set 数据结构，而 Set 可以保证子项不重复，且和数组转换十分方便，所以在一些可能会涉及重复添加的场景下可以直接使用 Set 代替 Array，避免了多个地方重复判断是否已经存在该子项。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">const set = new Set()</span><br><span class="line">set.add(1)</span><br><span class="line">set.add(1)</span><br><span class="line">set.add(1)</span><br><span class="line">set.size // 1</span><br><span class="line">const arr = [...set] // arr: [1]</span><br></pre></td></tr></table></figure>
+
+<h4 id="强大的reduce"><a href="#强大的reduce" class="headerlink" title="强大的reduce"></a>强大的reduce</h4><p>array.reduce 遍历并将当前次回调函数的返回值作为下一次回调函数执行的第一个参数。<br>利用 array.reduce 替代一些需要多次遍历的场景，可以提高代码运行效率。<br>假如有如下每个元素都由字母’s’加数字组成的数组arr，现在找出其中最大的数字：（arr不为空）</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">const arr = [&apos;s0&apos;, &apos;s4&apos;, &apos;s1&apos;, &apos;s2&apos;, &apos;s8&apos;, &apos;s3&apos;]</span><br><span class="line"></span><br><span class="line">// 方法1  进行了多次遍历，低效</span><br><span class="line">const newArr = arr.map(item =&gt; item.substring(1)).map(item =&gt; Number(item))</span><br><span class="line">const maxS = Math.max(...newArr)</span><br><span class="line"></span><br><span class="line">// 方法2  一次遍历</span><br><span class="line">const maxS = arr.reduce((prev, cur) =&gt; &#123;</span><br><span class="line">  const curIndex = Number(cur.replace(&apos;s&apos;, &apos;&apos;))</span><br><span class="line">  return curIndex &gt; prev ? curIndex : prev</span><br><span class="line">&#125;, 0)</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">const arr = [1, 2, 3, 4, 5]</span><br><span class="line"></span><br><span class="line"> // 方法1  遍历了两次，效率低</span><br><span class="line">const value = arr.filter(item =&gt; item % 2 === 0).map(item =&gt; (&#123; value: item &#125;))</span><br><span class="line"></span><br><span class="line">// 方法1  一次遍历，效率高</span><br><span class="line">const value = arr.reduce((prev, curr) =&gt; &#123;</span><br><span class="line">    return curr % 2 === 0 ? [...prev, curr] : prev</span><br><span class="line">&#125;, [])</span><br></pre></td></tr></table></figure>
+
+<p>也可用 reduce 做下面这样的处理来生成想要的 html 结构：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line">// 后端返回数据</span><br><span class="line">const data = &#123;</span><br><span class="line">  &apos;if _ then s9&apos;: [</span><br><span class="line">    &apos;作用属于各种,结构属于住宅,结构能承受作用,作用属于在正常建造和正常使用过程中可能发生&apos;,</span><br><span class="line">    &apos;作用属于各种,结构属于住宅,结构能承受作用,作用属于在正常建造和正常使用过程中可能发生&apos;,</span><br><span class="line">    &apos;作用属于各种,结构属于住宅,结构能承受作用,作用属于在正常建造和正常使用过程中可能发生&apos;</span><br><span class="line">    ],</span><br><span class="line">  &apos;if C then s4&apos;: [</span><br><span class="line">    &apos;当有条件时时,结构构件满足要求,要求属于安全性、适用性和耐久性&apos;,</span><br><span class="line">    &apos;当有条件时时,住宅结构满足要求,要求属于安全性、适用性和耐久性&apos;</span><br><span class="line">  ]</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">const ifthens = Object.entries(data).reduce((prev, cur) =&gt; &#123;</span><br><span class="line">  const values = cur[1].reduce((prev, cur) =&gt; `$&#123;prev&#125;&lt;p&gt;$&#123;cur&#125;&lt;/p&gt;`, &apos;&apos;)</span><br><span class="line">  return `</span><br><span class="line">    $&#123;prev&#125;</span><br><span class="line">    &lt;li&gt;</span><br><span class="line">      &lt;p&gt;$&#123;cur[0]&#125;&lt;/p&gt;</span><br><span class="line">      $&#123;values&#125;</span><br><span class="line">    &lt;/li&gt;</span><br><span class="line">  `</span><br><span class="line">&#125;, &apos;&apos;)</span><br><span class="line"></span><br><span class="line">const html = `</span><br><span class="line">  &lt;ul class=&quot;nlp-notify-body&quot;&gt;</span><br><span class="line">    $&#123;ifthens&#125;</span><br><span class="line">  &lt;/ul&gt;</span><br><span class="line">`</span><br></pre></td></tr></table></figure>
+
+<p>生成的html结构如下:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">&lt;ul class=&quot;nlp-notify-body&quot;&gt;            </span><br><span class="line">  &lt;li&gt;</span><br><span class="line">    &lt;p&gt;if _ then s9&lt;/p&gt;</span><br><span class="line">    &lt;p&gt;作用属于各种,结构属于住宅,结构能承受作用,作用属于在正常建造和正常使用过程中可能发生&lt;/p&gt;</span><br><span class="line">    &lt;p&gt;作用属于各种,结构属于住宅,结构能承受作用,作用属于在正常建造和正常使用过程中可能发生&lt;/p&gt;</span><br><span class="line">    &lt;p&gt;作用属于各种,结构属于住宅,结构能承受作用,作用属于在正常建造和正常使用过程中可能发生&lt;/p&gt;</span><br><span class="line">  &lt;/li&gt;</span><br><span class="line">  &lt;li&gt;</span><br><span class="line">    &lt;p&gt;if C then s4&lt;/p&gt;</span><br><span class="line">    &lt;p&gt;当有条件时时,结构构件满足要求,要求属于安全性、适用性和耐久性&lt;/p&gt;</span><br><span class="line">    &lt;p&gt;当有条件时时,住宅结构满足要求,要求属于安全性、适用性和耐久性&lt;/p&gt;</span><br><span class="line">  &lt;/li&gt;</span><br><span class="line">&lt;/ul&gt;</span><br></pre></td></tr></table></figure>
+
 
       
     </div>
@@ -450,12 +516,12 @@
   <!-- JS库 sweetalert 可修改路径 -->
   <script src="https://cdn.bootcss.com/jquery/2.0.0/jquery.min.js"></script>
   <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
-  <p><span>本文标题:</span><a href="/2019/09/22/如何搭建github/">如何搭建github</a></p>
+  <p><span>本文标题:</span><a href="/2020/08/08/JS数组常用技巧/">JS数组常用技巧</a></p>
   <p><span>文章作者:</span><a href="/" title="访问 七月 的个人博客">七月</a></p>
-  <p><span>发布时间:</span>2019年09月22日 - 23:09</p>
-  <p><span>最后更新:</span>2020年06月23日 - 22:06</p>
-  <p><span>原始链接:</span><a href="/2019/09/22/如何搭建github/" title="如何搭建github">http://yueqiqi.com/2019/09/22/如何搭建github/</a>
-    <span class="copy-path" title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="http://yueqiqi.com/2019/09/22/如何搭建github/" aria-label="复制成功！"></i></span>
+  <p><span>发布时间:</span>2020年08月08日 - 18:08</p>
+  <p><span>最后更新:</span>2020年08月08日 - 18:08</p>
+  <p><span>原始链接:</span><a href="/2020/08/08/JS数组常用技巧/" title="JS数组常用技巧">http://yueqiqi.com/2020/08/08/JS数组常用技巧/</a>
+    <span class="copy-path" title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="http://yueqiqi.com/2020/08/08/JS数组常用技巧/" aria-label="复制成功！"></i></span>
   </p>
   <p><span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank" title="Attribution-NonCommercial-NoDerivatives 4.0 International (CC BY-NC-ND 4.0)">署名-非商业性使用-禁止演绎 4.0 国际</a> 转载请保留原文链接及作者。</p>  
 </div>
@@ -518,7 +584,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/github搭建/" rel="tag"># github搭建</a>
+            <a href="/tags/js/" rel="tag"># js</a>
           
         </div>
       
@@ -543,15 +609,15 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
+              <a href="/2020/08/08/10个Vue开发技巧/" rel="next" title="10个Vue开发技巧">
+                <i class="fa fa-chevron-left"></i> 10个Vue开发技巧
+              </a>
+            
           </div>
 
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2019/09/23/微信小程序弹出商品框样式/" rel="prev" title="微信小程序弹出商品框样式">
-                微信小程序弹出商品框样式 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -743,7 +809,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#码云、github-网站，开源平台"><span class="nav-number">1.</span> <span class="nav-text">码云、github  : 网站，开源平台</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#github"><span class="nav-number">2.</span> <span class="nav-text">github</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#https-github-com"><span class="nav-number">3.</span> <span class="nav-text">https://github.com/</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#注册邮箱："><span class="nav-number">4.</span> <span class="nav-text">注册邮箱：</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#生成类似-1-100-这样的的数组："><span class="nav-number">1.</span> <span class="nav-text">生成类似[1-100]这样的的数组：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#数组解构赋值应用"><span class="nav-number">2.</span> <span class="nav-text">数组解构赋值应用</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#数组浅拷贝"><span class="nav-number">3.</span> <span class="nav-text">数组浅拷贝</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#数组合并"><span class="nav-number">4.</span> <span class="nav-text">数组合并</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#数组去重"><span class="nav-number">5.</span> <span class="nav-text">数组去重</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#普通数组"><span class="nav-number">5.1.</span> <span class="nav-text">普通数组</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#根据对象中的某个键值去重"><span class="nav-number">5.2.</span> <span class="nav-text">根据对象中的某个键值去重</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#数组对象去重"><span class="nav-number">5.3.</span> <span class="nav-text">数组对象去重</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#数组取交集"><span class="nav-number">6.</span> <span class="nav-text">数组取交集</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#数组取差集"><span class="nav-number">7.</span> <span class="nav-text">数组取差集</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#数组转对象"><span class="nav-number">8.</span> <span class="nav-text">数组转对象</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#数组常用遍历"><span class="nav-number">9.</span> <span class="nav-text">数组常用遍历</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#遍历的混合使用"><span class="nav-number">10.</span> <span class="nav-text">遍历的混合使用</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#检测数组所有元素是否都符合判断条件"><span class="nav-number">11.</span> <span class="nav-text">检测数组所有元素是否都符合判断条件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#检测数组是否有元素符合判断条件"><span class="nav-number">12.</span> <span class="nav-text">检测数组是否有元素符合判断条件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#找到第一个符合条件的元素-下标"><span class="nav-number">13.</span> <span class="nav-text">找到第一个符合条件的元素/下标</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#数组使用误区"><span class="nav-number">14.</span> <span class="nav-text">数组使用误区</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#array-includes-和-array-indexOf"><span class="nav-number">14.1.</span> <span class="nav-text">array.includes() 和 array.indexOf()</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#array-find-、-array-findIndex-和-array-some"><span class="nav-number">14.2.</span> <span class="nav-text">array.find() 、 array.findIndex() 和 array.some()</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#array-some"><span class="nav-number">14.2.1.</span> <span class="nav-text">array.some()</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#array-find-和-array-filter"><span class="nav-number">14.3.</span> <span class="nav-text">array.find() 和 array.filter()</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#合理使用-Set-数据结构"><span class="nav-number">14.4.</span> <span class="nav-text">合理使用 Set 数据结构</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#强大的reduce"><span class="nav-number">14.5.</span> <span class="nav-text">强大的reduce</span></a></li></ol></li></ol></div>
             
 
           </div>
